@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="Source from Rice University’s Business Statistics and Analysis
+四，Linear Regression for Business Statistics
+Week 1 - Regression Analysis
+1. Introducing Linear Regression- Building the ModelWhat is Linear Regression?
+Linear regression attempts to fit a linear relation between a variable of interest and a set of variables that may be related to the variable of interest."/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Miles"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Business Statistics and Analysis Basic 03"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Source from Rice University’s Business Statistics and Analysis
+四，Linear Regression for Business Statistics
+Week 1 - Regression Analysis
+1. Introducing Linear Regression- Building the ModelWhat is Linear Regression?
+Linear regression attempts to fit a linear relation between a variable of interest and a set of variables that may be related to the variable of interest."/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="陋室"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Business Statistics and Analysis Basic 03 - 陋室</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="favicon.ico"/>
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">陋室</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Business Statistics and Analysis Basic 03</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-07-30
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Kaggle/">#Kaggle</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/BIA/">BIA</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Source from Rice University’s <a href="https://www.coursera.org/specializations/business-statistics-analysis" target="_blank" rel="noopener">Business Statistics and Analysis</a></p>
+<h2 id="四，Linear-Regression-for-Business-Statistics"><a href="#四，Linear-Regression-for-Business-Statistics" class="headerlink" title="四，Linear Regression for Business Statistics"></a>四，Linear Regression for Business Statistics</h2><hr>
+<h3 id="Week-1-Regression-Analysis"><a href="#Week-1-Regression-Analysis" class="headerlink" title="Week 1 - Regression Analysis"></a>Week 1 - Regression Analysis</h3><hr>
+<h4 id="1-Introducing-Linear-Regression-Building-the-Model"><a href="#1-Introducing-Linear-Regression-Building-the-Model" class="headerlink" title="1. Introducing Linear Regression- Building the Model"></a>1. Introducing Linear Regression- Building the Model</h4><p><strong>What is Linear Regression?</strong></p>
+<p><em>Linear regression attempts to fit a linear relation between a variable of interest and a set of variables that may be related to the variable of interest.</em></p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Example</span><br><span class="line">There is a Sales manager of a toys retail company which sells various</span><br><span class="line">kinds of toys in the local market. This sales manager needs to make</span><br><span class="line">some kind of projections about the number of monthly units that the retail company will be able to sell of this particular toy in the</span><br><span class="line">coming half year. In the past she has been making such projections</span><br><span class="line">based on her gut feeling and now wishes to be a little more</span><br><span class="line">scientific about the whole process.</span><br><span class="line"></span><br><span class="line">Based on her experience, the manager figures out that the monthly unit</span><br><span class="line">sales depend on three important variables, the price at which the toy</span><br><span class="line">is sold, the monthly amount that the company spends on advertising the</span><br><span class="line">toy and the monthly amount spent on promotions for the toy.</span><br></pre></td></tr></table></figure>
+<p><strong>Overview of Regression:</strong></p>
+<p><strong>Simple Regression:</strong></p>
+<p>A regression with only one explanatory or X variable</p>
+<p><strong>Multiple Regression:</strong></p>
+<p>A regression with two or more explanatory or X variables</p>
+<ol>
+<li>Modeling Developing a regression model</li>
+<li>Estimation Using software to estimate the model</li>
+<li>Inference Interpreting the estimated regression model</li>
+<li>Prediction Making predictions about the variable of interest</li>
+</ol>
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/lrm.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/lre.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/lbi.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/lbi2.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/lrp.jpg">
+<h4 id="2-Errors-Residuals-and-R-square"><a href="#2-Errors-Residuals-and-R-square" class="headerlink" title="2. Errors, Residuals and R-square"></a>2. Errors, Residuals and R-square</h4><img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/lrerr.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/lrr.jpg">
+<p><strong>Regression is a process that has errors</strong></p>
+<ul>
+<li>Residuals and Errors</li>
+<li>R-square: A “goodness of fit” measure.</li>
+</ul>
+<p><strong>Why do we have errors in the regression model ?</strong></p>
+<ul>
+<li>Omitted variables.</li>
+<li>Functional relationship between the Y and X variables.</li>
+<li>The theory of regression analysis is based on certain assumptions about these errors.</li>
+</ul>
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/lrerr2.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/sir.jpg">
+<ul>
+<li>We have differentiated between the β’s and the b’s.</li>
+<li>In common usage people tend to mix these notations.</li>
+<li>However, as long as you understand the conceptual difference, you should be ok.</li>
+</ul>
+<h3 id="Week-2-Hypothesis-Testing-and-Goodness-of-Fit"><a href="#Week-2-Hypothesis-Testing-and-Goodness-of-Fit" class="headerlink" title="Week 2 - Hypothesis Testing and Goodness of Fit"></a>Week 2 - Hypothesis Testing and Goodness of Fit</h3><hr>
+<h4 id="1-Hypothesis-Testing-in-a-Linear-Regression"><a href="#1-Hypothesis-Testing-in-a-Linear-Regression" class="headerlink" title="1. Hypothesis Testing in a Linear Regression"></a>1. Hypothesis Testing in a Linear Regression</h4><img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/htl.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/hterror.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/step1.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/step2.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/step3.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/step4.jpg">
+<h4 id="2-Lesson-Hypothesis-Testing-in-a-Linear-Regression-‘p-values’"><a href="#2-Lesson-Hypothesis-Testing-in-a-Linear-Regression-‘p-values’" class="headerlink" title="2. Lesson Hypothesis Testing in a Linear Regression- ‘p-values’"></a>2. Lesson Hypothesis Testing in a Linear Regression- ‘p-values’</h4><img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/pv.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/pv2.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/pv3.jpg">
+<ol>
+<li>The t-cutoff approach</li>
+<li>The p-value approach</li>
+<li>The confidence interval approach</li>
+</ol>
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/ci.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/pv4.jpg">
+<h4 id="3-‘Goodness-of-Fit’-measures-R-square-and-Adjusted-R-square"><a href="#3-‘Goodness-of-Fit’-measures-R-square-and-Adjusted-R-square" class="headerlink" title="3. ‘Goodness of Fit’ measures- R-square and Adjusted R-square"></a>3. ‘Goodness of Fit’ measures- R-square and Adjusted R-square</h4><img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/ir.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/ir2.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/ir3.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/ir4.jpg">
+<h4 id="4-Categorical-Variables-in-a-Regression-Dummy-Variables"><a href="#4-Categorical-Variables-in-a-Regression-Dummy-Variables" class="headerlink" title="4. Categorical Variables in a Regression- Dummy Variables"></a>4. Categorical Variables in a Regression- Dummy Variables</h4><img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/dv.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/dv2.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/dv3.jpg">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Example</span><br><span class="line">A parcel delivery service operates in two different regions, region</span><br><span class="line">“A” and region “B”. Delivery trucks leave the central warehouse and</span><br><span class="line">travel to region A and deliver parcels in that region. Similarly</span><br><span class="line">delivery trucks also leave the central warehouse and travel to region</span><br><span class="line">B and deliver parcels in that region.</span><br></pre></td></tr></table></figure>
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/dv4.jpg">
+<h3 id="Week-3-Dummy-Variables-Multicollinearity"><a href="#Week-3-Dummy-Variables-Multicollinearity" class="headerlink" title="Week 3 - Dummy Variables, Multicollinearity"></a>Week 3 - Dummy Variables, Multicollinearity</h3><hr>
+<h4 id="1-Dummy-Variable-Regression-Extension-to-Multiple-Categories"><a href="#1-Dummy-Variable-Regression-Extension-to-Multiple-Categories" class="headerlink" title="1. Dummy Variable Regression - Extension to Multiple Categories"></a>1. Dummy Variable Regression - Extension to Multiple Categories</h4><img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/mutidv.jpg">
+<p>We need one dummy variable less than the number of categories. Incorrect to have three dummies REGA, REGB and REGC.</p>
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/mutidv.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/mutidv2.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-03/mutidv3.jpg">
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 Miles<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

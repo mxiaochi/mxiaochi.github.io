@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="Source from Rice University’s Business Statistics and Analysis
+三, Business Applications of Hypothesis Testing and Confidence Interval Estimation
+Week 1 - Confidence Interval - Introduction
+1. Introducing the t-distribution, the T.DIST Function"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Miles"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Business Statistics and Analysis Basic 02"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Source from Rice University’s Business Statistics and Analysis
+三, Business Applications of Hypothesis Testing and Confidence Interval Estimation
+Week 1 - Confidence Interval - Introduction
+1. Introducing the t-distribution, the T.DIST Function"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="陋室"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Business Statistics and Analysis Basic 02 - 陋室</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="favicon.ico"/>
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">陋室</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Business Statistics and Analysis Basic 02</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-07-30
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Kaggle/">#Kaggle</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/BIA/">BIA</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Source from Rice University’s <a href="https://www.coursera.org/specializations/business-statistics-analysis" target="_blank" rel="noopener">Business Statistics and Analysis</a></p>
+<h2 id="三-Business-Applications-of-Hypothesis-Testing-and-Confidence-Interval-Estimation"><a href="#三-Business-Applications-of-Hypothesis-Testing-and-Confidence-Interval-Estimation" class="headerlink" title="三, Business Applications of Hypothesis Testing and Confidence Interval Estimation"></a>三, Business Applications of Hypothesis Testing and Confidence Interval Estimation</h2><hr>
+<h3 id="Week-1-Confidence-Interval-Introduction"><a href="#Week-1-Confidence-Interval-Introduction" class="headerlink" title="Week 1 - Confidence Interval - Introduction"></a>Week 1 - Confidence Interval - Introduction</h3><hr>
+<h4 id="1-Introducing-the-t-distribution-the-T-DIST-Function"><a href="#1-Introducing-the-t-distribution-the-T-DIST-Function" class="headerlink" title="1. Introducing the t-distribution, the T.DIST Function"></a>1. Introducing the t-distribution, the T.DIST Function</h4><img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/tdis.jpg">
+<a id="more"></a>
+<ul>
+<li>Does not have any standalone business application</li>
+<li>Used as an interim tool to calculate confidence intervals and hypothesis testing</li>
+<li>Has an associated probability density function</li>
+<li>Associated Excel functions are the =T.DIST and =T.INV</li>
+</ul>
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/df.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/df2.jpg">
+<h4 id="2-Introducing-Confidence-Interval"><a href="#2-Introducing-Confidence-Interval" class="headerlink" title="2. Introducing Confidence Interval"></a>2. Introducing Confidence Interval</h4><ul>
+<li>It is an ‘interval’ with some ‘confidence’ or probability attached to it</li>
+<li>An interval for some unknown characteristic of the population data</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Example: US Presidential Election</span><br><span class="line">• Only two candidates, A and B</span><br><span class="line">• Wish to predict vote percentage for candidate A</span><br><span class="line">• A random selection of 500 potential voters surveyed</span><br><span class="line">• 300 voters will votefor A and 200 for B</span><br><span class="line">• That is, 60% of surveyed voters will vote for A</span><br><span class="line"></span><br><span class="line">Will candidate A get 60% of all votes in the actual election?</span><br></pre></td></tr></table></figure>
+<p>A 95% confidence interval for the vote share of candidate A,</p>
+<p><strong>[55.7%, 64.3%]</strong></p>
+<ul>
+<li><p>95% of similarly constructed confidence intervals likely to have the actual vote share for A</p>
+</li>
+<li><p>there is a 0.95 probability that the actual vote share for A will be between 55.7% and 64.3%</p>
+</li>
+</ul>
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/ci.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/ci2.jpg">
+<p>We wish to find out u</p>
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/ci3.jpg">
+<p>Example:</p>
+<p>US Presidential Election, predicting the proportion of votes for a particular candidate</p>
+<p><em>confidence interval for the ‘population proportion’</em></p>
+<p>Example:</p>
+<p>Average starting salary of all business students who graduated last year in New York city</p>
+<p><em>confidence interval for the ‘population mean’</em></p>
+<h4 id="3-The-z-statistic-and-the-t-statistic"><a href="#3-The-z-statistic-and-the-t-statistic" class="headerlink" title="3. The z-statistic and the t-statistic"></a>3. The z-statistic and the t-statistic</h4><img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/clt.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/zsta.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/tsta.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/tsta2.jpg">
+<h4 id="4-Using-z-and-t-statistics-to-Construct-Confidence-Interval"><a href="#4-Using-z-and-t-statistics-to-Construct-Confidence-Interval" class="headerlink" title="4. Using z- and t- statistics to Construct Confidence Interval"></a>4. Using z- and t- statistics to Construct Confidence Interval</h4><img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/exp.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/sol.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/sol2.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/sol3.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/sol4.jpg">
+<h3 id="Week-2-Confidence-Interval-Applications"><a href="#Week-2-Confidence-Interval-Applications" class="headerlink" title="Week 2 - Confidence Interval - Applications"></a>Week 2 - Confidence Interval - Applications</h3><hr>
+<h4 id="1-Application-of-Confidence-Interval"><a href="#1-Application-of-Confidence-Interval" class="headerlink" title="1. Application of Confidence Interval"></a>1. Application of Confidence Interval</h4><ul>
+<li>Conceptual understanding</li>
+<li>Examples</li>
+<li>Stylized problem</li>
+</ul>
+
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/ci5.jpg">
+<p>When the population standard deviation (σ) is not known,</p>
+<ul>
+<li>we replace it by the sample standard deviation (s)</li>
+<li>The z-statistic gets replaced by the t-statistic</li>
+</ul>
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/cit.jpg">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Example</span><br><span class="line">A person wishes to explore the size of single family houses that are</span><br><span class="line"> typically available for purchase in a particular neighborhood of</span><br><span class="line"> Houston in Texas. She manages to get hold of a list containing house</span><br><span class="line"> sizes of a sample of 100 houses that were sold in the past two years.</span><br><span class="line"></span><br><span class="line">The data is provided in the excel data file Home_Sizes.xlsx, and given</span><br><span class="line"> this data she wishes to assess the average size of houses typically</span><br><span class="line"> available for purchase in this neighborhood.</span><br><span class="line"></span><br><span class="line">1.Population standard deviation not known</span><br><span class="line">2.Need to use calculation for confidence interval based on the</span><br><span class="line">t-statistic</span><br></pre></td></tr></table></figure>
+<p><strong>A 95% confidence interval for the average (population mean) house size:<br>[3048.2, 3428.3] square feet</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Example</span><br><span class="line">A Consultancy firm surveyed a randomly selected set of 210 CEOs of</span><br><span class="line">‘fast growing small companies’ in the US and Europe. Only 51% of these</span><br><span class="line"> executives had a management succession plan in place, the remaining</span><br><span class="line">  did not have one</span><br><span class="line"></span><br><span class="line">Use this information to compute a 90% confidence interval to estimate</span><br><span class="line"> the proportion of all ‘fast growing small companies’ that have a</span><br><span class="line">  management succession plan.</span><br></pre></td></tr></table></figure>
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/cip.jpg">
+<p><strong>Answer:<br>The 90% confidence interval is:<br>[0.453, 0.567] or [45.3%, 56.7%]</strong></p>
+<p><em>Summary:</em></p>
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/cis.jpg">
+<h4 id="2-Sample-Size-Calculation"><a href="#2-Sample-Size-Calculation" class="headerlink" title="2. Sample Size Calculation"></a>2. Sample Size Calculation</h4><ul>
+<li><p>A pollster wanting to make a prediction about aparticular candidate’s vote share in the US presidential election.</p>
+</li>
+<li><p>A quality control manager at a battery manufacturer wanting to  estimate the average number of defective batteries contained in a box shipped by the company.</p>
+</li>
+</ul>
+<p><em>Different industries may have different rule of thumb strategies for sample size selection.</em></p>
+<ul>
+<li><p>The pollster may want to have a margin of error +/- 3% with a confidence level of 95%</p>
+<p>  <em>simply make some small survey get std = 0.9</em></p>
+  <img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/number.jpg">
+</li>
+<li><p>The quality control manager may want to assess the average number of defectives in a box with a margin of error of plus minus 0.3 batteries and a confidence level of 95%</p>
+  <img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/numberp.jpg">
+  <img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/numberp2.jpg">
+</li>
+<li><p>Many industries use rule-of-thumb strategies/heuristics</p>
+</li>
+<li><p>We provided here some basis for choosing an appropriate sample size</p>
+</li>
+</ul>
+<h3 id="Week-3-Hypothesis-Testing"><a href="#Week-3-Hypothesis-Testing" class="headerlink" title="Week 3 - Hypothesis Testing"></a>Week 3 - Hypothesis Testing</h3><hr>
+<p>Hypothesis tests are an important tool to analyze data and make some inferences from it.</p>
+<p><em>All Hypothesis tests follow a basic logic…</em></p>
+<ol>
+<li>An assumption or a claim is made.</li>
+<li>If your data contradicts this assumption or claim then you conclude that the claim or assumption made must be wrong.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Example</span><br><span class="line"></span><br><span class="line">As I drove to work one day recently, I assumed that the road that I</span><br><span class="line">normally take to school would, as usual, take me to school.</span><br><span class="line"></span><br><span class="line">There is the assumption, part 1 of the hypothesis.</span><br><span class="line"></span><br><span class="line">But I reached a construction barricade, the road was closed.</span><br><span class="line"></span><br><span class="line">There is the data.</span><br><span class="line">It contradicts my assumption. So my original assumption or hypothesis</span><br><span class="line">was wrong.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Another Example</span><br><span class="line"></span><br><span class="line">You are the production manager at a beverage manufacturer and you</span><br><span class="line">receive a bottling unit that has been recently re-adjusted so that it</span><br><span class="line">puts 200 milliliter of beverage in disposable plastic bottles.</span><br><span class="line"></span><br><span class="line">There is the assumption, You assume that the unit actually puts 200 milliliter of beverage in the bottles.</span><br><span class="line"></span><br><span class="line">Next, rather than accepting this assumption, you decide to test it</span><br><span class="line">using data. You fill out 10 bottles using the unit at different times</span><br><span class="line">so as to obtain a random sample and very carefully measure the amount</span><br><span class="line">of beverage inside each bottle.</span><br><span class="line"></span><br><span class="line">This is your data. A random sample of 10 observations on the amount of</span><br><span class="line">beverage in the bottles.</span><br></pre></td></tr></table></figure>
+<p><strong>if the average amount of beverage per bottle across these 10 bottles is 170 milliliter?</strong></p>
+<p><em>easy to conclude that the bottling unit is not properly adjusted.</em></p>
+<p><strong>if the average amount of beverage per bottle across these 10 bottles is 200 milliliter?</strong></p>
+<p><em>again, the conclusion seems easy given this evidence.</em></p>
+<p><strong>if the average amount of beverage per bottle across these 10 bottles is 199.9 milliliter or 200.1 milliliter?</strong></p>
+<p><em>perhaps, giving benefit of doubt you would conclude that the unit is properly adjusted.</em></p>
+<p><strong>if the average amount per bottle in the sample turns out to be 199.1 ml? 198ml? 202 ml? …</strong></p>
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/hte.jpg">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Is a widely used procedure to test a variety of claims...</span><br><span class="line"></span><br><span class="line">testing the fuel efficiency claim of a car manufacturer. testing the</span><br><span class="line">claims of efficacy made by a new drug.</span><br><span class="line"></span><br><span class="line">testing the claim that the defective rate in your production process is</span><br><span class="line">greater than the acceptable limit.</span><br><span class="line"></span><br><span class="line">testing the claim by an educational website that enrolling in its</span><br><span class="line">courses leads to higher school scores.</span><br><span class="line"></span><br><span class="line">... ...</span><br></pre></td></tr></table></figure>
+<h4 id="1-The-Logic-of-Hypothesis-Testing"><a href="#1-The-Logic-of-Hypothesis-Testing" class="headerlink" title="1. The Logic of Hypothesis Testing"></a>1. The Logic of Hypothesis Testing</h4><img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/ht.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/htclt.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/normdis.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/normdis2.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/htzsta.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/httsta.jpg">
+<h4 id="2-Conducting-a-Hypothesis-Test-the-Four-Steps"><a href="#2-Conducting-a-Hypothesis-Test-the-Four-Steps" class="headerlink" title="2. Conducting a Hypothesis Test, the Four Steps"></a>2. Conducting a Hypothesis Test, the Four Steps</h4><img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/hts.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/hts3.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/hts4.jpg">
+<h4 id="3-Single-Tail-and-Two-Tail-Hypothesis-Tests"><a href="#3-Single-Tail-and-Two-Tail-Hypothesis-Tests" class="headerlink" title="3. Single Tail and Two Tail Hypothesis Tests"></a>3. Single Tail and Two Tail Hypothesis Tests</h4><ol>
+<li>Formulate Hypothesis</li>
+<li>Calculate the t-statistic</li>
+<li>Cutoff values for the t-statistic</li>
+<li>Check whether t-statistic falls in the rejection region</li>
+</ol>
+<p><em>Interpret results of hypothesis test as applied to the particular business application</em></p>
+<p><code>1. Two tailed test</code></p>
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/httt.jpg">
+<p><code>2. Single tailed test</code></p>
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/stht.jpg">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Example</span><br><span class="line"></span><br><span class="line">A fuel additive manufacturer claims that through the use of its’ fuel</span><br><span class="line">additive, automobiles in the small car category should achieve on</span><br><span class="line">average an increase of 3 miles or more per gallon of fuel.</span><br></pre></td></tr></table></figure>
+<p><strong>Claim made: increase in fuel efficiency is 3 miles per gallon or more</strong></p>
+<p>To test the claim :</p>
+<ol>
+<li>Random selection of 150 small cars.</li>
+<li>Their fuel efficiency measured before and after the use of fuel<br>  additive.</li>
+<li>150 measurements obtained for the increase in miles per gallon<br>  achieved.</li>
+</ol>
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/sthte.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/stht2.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/sthte2.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/sthte3.jpg">
+<h4 id="4-Guidelines-Formulas-and-an-Application-of-Hypothesis-Test"><a href="#4-Guidelines-Formulas-and-an-Application-of-Hypothesis-Test" class="headerlink" title="4. Guidelines, Formulas and an Application of Hypothesis Test"></a>4. Guidelines, Formulas and an Application of Hypothesis Test</h4><img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/nhg.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/htg.jpg">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Example</span><br><span class="line">(when the Null hypothesis naturally turns out to have a strict inequality)</span><br><span class="line">We wish to test a claim that the average age of Men MBA students across</span><br><span class="line">various MBA programs in the US is greater than 28 years. For this we</span><br><span class="line">collect data on average ages of men MBA students across a sample of</span><br><span class="line">40 MBA programs in the US.</span><br></pre></td></tr></table></figure>
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/nht.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/nht2.jpg">
+<h4 id="5-Hypothesis-Test-for-a-Population-Proportion"><a href="#5-Hypothesis-Test-for-a-Population-Proportion" class="headerlink" title="5. Hypothesis Test for a Population Proportion"></a>5. Hypothesis Test for a Population Proportion</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Example</span><br><span class="line">A medium sized university in the US introduces a new lunch facility on</span><br><span class="line">campus on a trial basis. The university operates the Lunch facility for</span><br><span class="line">a few months and then decides to survey the student body. Based on the</span><br><span class="line">survey, university would make this facility a permanent fixture or do</span><br><span class="line">away with it. Specifically, if more than or equal to 70% of the</span><br><span class="line">student body approves of it then the facility would be made</span><br><span class="line">permanent else it would shut down.</span><br><span class="line"></span><br><span class="line">The university conducts a survey with 750 randomly selected students on</span><br><span class="line">campus and finds that 510 of these students (or 68% of the sampled</span><br><span class="line">students) approve of the new facility and the remaining 240 students</span><br><span class="line">or 32% students do not approve of it.</span><br><span class="line"></span><br><span class="line">Based on the criteria set by University should the facility be made</span><br><span class="line">permanent?</span><br></pre></td></tr></table></figure>
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/htp1.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/htp2.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/htp3.jpg">
+<h4 id="6-Type-I-and-Type-II-Errors-in-a-Hypothesis-Test"><a href="#6-Type-I-and-Type-II-Errors-in-a-Hypothesis-Test" class="headerlink" title="6. Type I and Type II Errors in a Hypothesis Test"></a>6. Type I and Type II Errors in a Hypothesis Test</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Example</span><br><span class="line">Your friend Sam claims that he can shoot 40 or more baskets in an hour</span><br><span class="line">from the 3-point line in a Basketball court. So, Sam is making a claim</span><br><span class="line">about a population parameter, in this case it is his true shooting</span><br><span class="line">ability from the 3-point line in a Basketball court. This can be</span><br><span class="line">likened to the population mean mu. Thus Sam is claiming that the</span><br><span class="line">population mean mu of his shooting ability is greater than or equal</span><br><span class="line">to 40 baskets in an hour from the 3-point line in a Basketball court.</span><br><span class="line"></span><br><span class="line">Next, you decide to test this claim. For that, you take Sam to the</span><br><span class="line">Basketball court everyday for 10 days and make him shoot baskets from</span><br><span class="line">the 3 point line for an hour every day. You end up with 10 data points</span><br><span class="line">which are the number of baskets Sam shot in those 10 days. You can</span><br><span class="line">calculate the sample mean and the sample standard deviation from these</span><br><span class="line">ten observations.</span><br></pre></td></tr></table></figure>
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/hterror.jpg">
+<p>Suppose that Sam’s true ability is indeed ≥ 40.</p>
+<p>However the 10 days were not good for Sam.</p>
+<p>He gave a low sample average.</p>
+<p>You reject the Null hypothesis.</p>
+<p><strong>Type I error: Rejecting the Null Hypothesis when it is true.</strong></p>
+<p><strong>Type II error: Not rejecting the Null Hypothesis when it is false</strong></p>
+<p>Sam’s true ability is NOT ≥ 40.</p>
+<p>However the 10 days were lucky for Sam. He gave a high sample average.</p>
+<p>You DID NOT reject the Null hypothesis.</p>
+<p><em>Reducing the probability of Type I and Type II errors</em></p>
+<ul>
+<li>Probability of Type I error is set by our choice of α</li>
+<li><p>Typically α = 0.05 or 0.01</p>
+</li>
+<li><p>Probability of Type II error can be reduced by taking a larger sample size.</p>
+</li>
+</ul>
+<h3 id="Week-4-Hypothesis-Test-Differences-in-Mean"><a href="#Week-4-Hypothesis-Test-Differences-in-Mean" class="headerlink" title="Week 4 - Hypothesis Test - Differences in Mean"></a>Week 4 - Hypothesis Test - Differences in Mean</h3><hr>
+<h4 id="1-Introducing-the-Difference-In-Means-Hypothesis-Test"><a href="#1-Introducing-the-Difference-In-Means-Hypothesis-Test" class="headerlink" title="1. Introducing the Difference-In-Means Hypothesis Test"></a>1. Introducing the Difference-In-Means Hypothesis Test</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">An empirical study using data on heights of people claimed that the</span><br><span class="line">average height of men aged 18 years to 45 years across the world was</span><br><span class="line">173 cm.</span><br><span class="line"></span><br><span class="line">This study included men not only from the sports fraternity but across</span><br><span class="line">a wide spectrum of professions and walks of life.</span><br></pre></td></tr></table></figure>
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/dfht.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/dfht2.jpg">
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/dfht3.jpg">
+<ul>
+<li>Equal variance t-test for differences in means.</li>
+<li>Unequal variance t-test for differences in means.</li>
+<li>Paired t-test for differences in means.</li>
+</ul>
+<h4 id="2-The-Paired-t-Test-for-Means"><a href="#2-The-Paired-t-Test-for-Means" class="headerlink" title="2. The Paired t-Test for Means"></a>2. The Paired t-Test for Means</h4><ul>
+<li>Used to test claims around difference in two population means.</li>
+<li>Requires a sense of ‘pairing’ across individual observations in the two samples.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Paired t-test (Example)</span><br><span class="line"></span><br><span class="line">You are the training manager for a large organization. It is your jo to</span><br><span class="line">ensure that training needs of employees are met. One such training need</span><br><span class="line">is that of computer skills. You regularly send out batches of employees</span><br><span class="line">to such computer skills training organized by a third party vendor.</span><br><span class="line">Since the training costs money you wish to evaluate whether the</span><br><span class="line">training is indeed effective in improving the computer skills of</span><br><span class="line">employees. You decide to give a standardized computer skills test to</span><br><span class="line">employees before they go for such training and you again administer</span><br><span class="line">similar test when they come back from training. You also set a bench</span><br><span class="line">mark that the training would be considered effective if on average</span><br><span class="line">the ‘after scores’ are at least 10 points greater than the ‘before</span><br><span class="line">scores’.</span><br></pre></td></tr></table></figure>
+<img src="/2018/07/30/Business-Statistics-and-Analysis-Basic-02/pht.jpg">
+<p><strong>Paired t-test, some important considerations</strong></p>
+<ol>
+<li>Sense of pairing across individual observations of the two samples.</li>
+<li>The two samples should have equal number of observations.</li>
+<li>You may have your conclusion reversed in using a paired t-test versus either the equal or unequal variances t-test.</li>
+</ol>
+<p><code>Three kinds:</code></p>
+<ol>
+<li>Paired t-test for differences in means.<ul>
+<li>Used when there is a sense of ‘pairing’ in the data</li>
+</ul>
+</li>
+<li>t-test for differences in means ‘assuming equal variance’.</li>
+<li>t-test for differences in means ‘assuming unequal variance’.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Example</span><br><span class="line">The data can be thought of as a sample from a larger population.</span><br><span class="line"></span><br><span class="line">We wish to test whether the monthly dollar sales across the provinces</span><br><span class="line">of Alberta and British Columbia are the same.</span><br><span class="line"></span><br><span class="line">In other words we wish to check if there is any difference in monthly</span><br><span class="line">dollar sales across these two provinces.</span><br><span class="line"></span><br><span class="line">We will be making this inference using the 48 months of sample sales</span><br><span class="line">data we have.</span><br></pre></td></tr></table></figure>
+<p><strong>Difference in means test</strong></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 Miles<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

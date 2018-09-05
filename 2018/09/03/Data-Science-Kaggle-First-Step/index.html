@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="This is my first blog written by English, you know…..
+
+A. KaggleHere is the wiki link, talks about what Kaggle is and what can we get.
+B. Titanic: Machine Learning from DisasterThe Titanic Disaster is almost every fresh bird’s first lesson to unveil the Kaggle’s veil (Yes, “Unveil the veil”, I get it from google translation).
+Basically,  Titanic gives us an Excel called train.csv which contains passengers’ information such as name, sex, age and so on. The train.csv has an important column called Survived, which is our task to analysis the relationship between Survived and the other columns. And there is another file called test.csv, it’s columns almost as same as train.csv except it does not contain Survived. As participants, we should build a model from train.csv and use this model to predict each passenger which in the test.csv  is alive or not. The more accurate you predict, the better grade you will get."/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Miles"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Data Science - Kaggle - First Step"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="This is my first blog written by English, you know…..
+
+A. KaggleHere is the wiki link, talks about what Kaggle is and what can we get.
+B. Titanic: Machine Learning from DisasterThe Titanic Disaster is almost every fresh bird’s first lesson to unveil the Kaggle’s veil (Yes, “Unveil the veil”, I get it from google translation).
+Basically,  Titanic gives us an Excel called train.csv which contains passengers’ information such as name, sex, age and so on. The train.csv has an important column called Survived, which is our task to analysis the relationship between Survived and the other columns. And there is another file called test.csv, it’s columns almost as same as train.csv except it does not contain Survived. As participants, we should build a model from train.csv and use this model to predict each passenger which in the test.csv  is alive or not. The more accurate you predict, the better grade you will get."/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="陋室"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Data Science - Kaggle - First Step - 陋室</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="favicon.ico"/>
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">陋室</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Data Science - Kaggle - First Step</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-09-03
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Kaggle/">#Kaggle</a> <a href="/tags/Data-Science/">#Data Science</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/BIA/">BIA</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <blockquote>
+<p>This is my first blog written by English, you know…..</p>
+</blockquote>
+<h3 id="A-Kaggle"><a href="#A-Kaggle" class="headerlink" title="A. Kaggle"></a>A. <a href="https://www.kaggle.com/" target="_blank" rel="noopener">Kaggle</a></h3><p>Here is the wiki <a href="https://en.wikipedia.org/wiki/Kaggle" target="_blank" rel="noopener">link</a>, talks about what Kaggle is and what can we get.</p>
+<h3 id="B-Titanic-Machine-Learning-from-Disaster"><a href="#B-Titanic-Machine-Learning-from-Disaster" class="headerlink" title="B. Titanic: Machine Learning from Disaster"></a>B. <a href="https://www.kaggle.com/c/titanic" target="_blank" rel="noopener">Titanic: Machine Learning from Disaster</a></h3><p>The <strong>Titanic Disaster</strong> is almost every fresh bird’s first lesson to unveil the Kaggle’s veil (Yes, “Unveil the veil”, I get it from google translation).</p>
+<p>Basically,  <strong>Titanic</strong> gives us an Excel called <code>train.csv</code> which contains passengers’ information such as name, sex, age and so on. The <code>train.csv</code> has an important column called <strong>Survived</strong>, which is our task to analysis the relationship between <strong>Survived</strong> and the other columns. And there is another file called <code>test.csv</code>, it’s columns almost as same as <code>train.csv</code> except it does not contain <strong>Survived</strong>. As participants, we should build a model from <code>train.csv</code> and use this model to predict each passenger which in the <code>test.csv</code>  is alive or not. The more accurate you predict, the better grade you will get.</p>
+<a id="more"></a>
+<h3 id="C-The-normal-process"><a href="#C-The-normal-process" class="headerlink" title="C. The normal process"></a>C. The normal process</h3><ul>
+<li><p>Business Understanding</p>
+</li>
+<li><p>Data Understanding</p>
+</li>
+<li><p>Data Preparation</p>
+</li>
+<li><p>Modeling</p>
+</li>
+<li><p>Evaluation</p>
+</li>
+<li><p>Deployment</p>
+</li>
+</ul>
+<p><strong>1. Business Understanding</strong></p>
+<p>Just like Ch B I talk about, every competition has its own targets, we should know exactly what the purpose is.</p>
+<p><strong>2.Data Understanding</strong></p>
+<p>Each <code>train.csv</code> contains lots of columns, some of them may very meaningful and the others may be just some smoke bomb (Do they know that’s mean?). The first step is find out which attribute actually affect the target such as <strong>Survived</strong>.</p>
+<p>Take <strong>Titanic </strong> as an example, first, we load the data:</p>
+<p><code>data_train = pd.read_csv(r&#39;D:\house\project\python\test\train.csv&#39;)</code></p>
+<img src="/2018/09/03/Data-Science-Kaggle-First-Step/form01.png">
+<p>As you can see, there are lots of passengers and each passenger has many attributes, some of them’s <strong>Survived</strong>=0 means they were dead, on the contrary(I always use this phrase in my English writing),   <strong>Survived</strong>=1 means they made alive.</p>
+<p>For intuition, I believe the ticket class which means rich or poor, age and sex will strong affect survived rata. Let me check this.</p>
+<p>First, the ticket class:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Survived_0 = data_train.Pclass[data_train.Survived == <span class="number">0</span>].value_counts()</span><br><span class="line">Survived_1 = data_train.Pclass[data_train.Survived == <span class="number">1</span>].value_counts()</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(&#123;<span class="string">'Survived'</span>:Survived_1, <span class="string">'Dead'</span>:Survived_0&#125;)</span><br><span class="line">df.plot(kind=<span class="string">'bar'</span>, stacked=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure>
+   <img src="/2018/09/03/Data-Science-Kaggle-First-Step/class.png">
+<p>   opps, the higher ticket class, the more chance for people to make alive. Wealth indeed is an important attribute.</p>
+<p>   Second, sex:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Survived_m = data_train.Survived[data_train.Sex == <span class="string">'male'</span>].value_counts()</span><br><span class="line">Survived_f = data_train.Survived[data_train.Sex == <span class="string">'female'</span>].value_counts()</span><br><span class="line">df2 = pd.DataFrame(&#123;<span class="string">'male'</span>:Survived_m, <span class="string">'female'</span>:Survived_f&#125;)</span><br><span class="line">df2.plot(kind=<span class="string">'bar'</span>, stacked=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure>
+   <img src="/2018/09/03/Data-Science-Kaggle-First-Step/sex.png">
+<p>   Yes, women have more chance than men to make alive.</p>
+<p>   Last, age, let us make some different:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">plt.subplot2grid((<span class="number">2</span>,<span class="number">3</span>),(<span class="number">1</span>,<span class="number">0</span>), colspan=<span class="number">2</span>)</span><br><span class="line">data_train.Age[data_train.Pclass == <span class="number">1</span>].plot(kind=<span class="string">'kde'</span>)</span><br><span class="line">data_train.Age[data_train.Pclass == <span class="number">2</span>].plot(kind=<span class="string">'kde'</span>)</span><br><span class="line">data_train.Age[data_train.Pclass == <span class="number">3</span>].plot(kind=<span class="string">'kde'</span>)</span><br><span class="line">plt.xlabel(<span class="string">'Age'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'Con'</span>)</span><br><span class="line">plt.title(<span class="string">'Each class age dis'</span>)</span><br><span class="line">plt.legend((<span class="string">'1st'</span>,<span class="string">'2st'</span>,<span class="string">'3st'</span>),loc=<span class="string">'best'</span>)</span><br></pre></td></tr></table></figure>
+   <img src="/2018/09/03/Data-Science-Kaggle-First-Step/age.png">
+<p>   Above code shows older people live in higher class cabin which also means the relationship between age and wealth.</p>
+<p>   Again, Data Understanding is a very important step, my demo code is too simple to show how to figure out these relations, you can get a clearly instruction from  <a href="https://www.kaggle.com/helgejo/an-interactive-data-science-tutorial" target="_blank" rel="noopener">An Interactive Data Science Tutorial</a>.</p>
+<p>   <strong>3. Data Preparation</strong></p>
+<p>   Before build prediction model, we should rearrange our data. In fact,  we may face many problems about the <code>train.csv</code>. Such as missing or the data type is string which most machine learning models in Python can not handle them very well. Here are some way to solve these problems</p>
+<ul>
+<li><p>Drop</p>
+<p>If one attribute lack most of data, like only one of ten has value, you can just drop it away.</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> X_train[X_train.Age.isnull()].value_counts() &gt; max:</span><br><span class="line"> reduced_X_train = X_train.drop(X_train.Age, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Set Yes or No</p>
+<p>If attribute which you believe is important however it has half and half missing value,  you can set <strong>Yes</strong> or <strong>No</strong> for value or null. Like this:</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df.loc[(df.Cabin.notnull()), <span class="string">'Cabin'</span>] = <span class="string">"Yes"</span></span><br><span class="line">df.loc[(df.Cabin.isnull()), <span class="string">'Cabin'</span>] = <span class="string">"No"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Impute</p>
+<p>  <strong>KSLearn</strong> provides us an easy way to fill vacancy:</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##Get Model Score from Imputation</span></span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing.imputation <span class="keyword">import</span> Imputer</span><br><span class="line">my_imputer = Imputer()</span><br><span class="line">imputed_X_train = my_imputer.fit_transform(X_train)</span><br><span class="line">imputed_X_test = my_imputer.transform(X_test)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Using Categorical Data with One Hot Encoding</p>
+<p>For example, if you people responded to a survey about which what brand of car they owned, the result would be categorical (because the answers would be things like <em>Honda</em>, <em>Toyota</em>, <em>Ford</em>, <em>None</em>, etc.). Responses fall into a fixed set of categories.</p>
+<p>You will get an error if you try to plug these variables into most machine learning models in Python without “encoding” them first. Here we’ll show the most popular method for encoding categorical variables.</p>
+  <img src="/2018/09/03/Data-Science-Kaggle-First-Step/one-hot.png">
+<p>It’s most common to one-hot encode these “object” columns, since they can’t be plugged directly into most models. Pandas offers a convenient function called <strong>get_dummies</strong> to get one-hot encodings. Call it like this:</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">one_hot_encoded_training_predictors = pd.get_dummies(train_predictors)</span><br></pre></td></tr></table></figure>
+<p>To see detail about this, can view <a href="https://www.kaggle.com/dansbecker/using-categorical-data-with-one-hot-encoding" target="_blank" rel="noopener">Using Categorical Data with One Hot Encoding</a></p>
+<p>   <strong>4. Modeling</strong></p>
+<p>   Finally, we move here….</p>
+<p>   After we have cleaned up data, we can choose one machine learning model to predict. I have just learned <strong>Decision Tree</strong> and <strong>Random Forest</strong>, and have heard the <strong>XGBoost</strong> is the leading model for working with standard tabular data <strong>XGBoost</strong> models dominate many <strong>Kaggle</strong> competitions.</p>
+<p>   To use one model, the code like this:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">model = RandomForestRegressor()</span><br><span class="line">model.fit(X_train, y_train)</span><br><span class="line">preds = model.predict(X_test)</span><br></pre></td></tr></table></figure>
+<p>   So easy, isn’t it? The <em>preds</em> is our target which should produce an Excel file to submit to <strong>Kaggle</strong>.</p>
+<p>   <strong>5. Evaluation</strong></p>
+<p>   No one can make it perfect at once, we should optimize again and again.  The normal benchmark is called <strong>Mean Absolute Error</strong> (also called <strong>MAE</strong>).</p>
+<p>   The prediction error for each passenger is:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error=actual−predicted</span><br></pre></td></tr></table></figure>
+<p>   It’s easy to use like this:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> mean_absolute_error</span><br><span class="line">predicted_home_prices = melbourne_model.predict(X)</span><br><span class="line">mean_absolute_error(y, predicted_home_prices)</span><br></pre></td></tr></table></figure>
+<p>   <strong>6. Deployment</strong></p>
+<p>   Bla Bla Bla, finish!</p>
+<h3 id="D-End"><a href="#D-End" class="headerlink" title="D. End"></a>D. End</h3><p>OK, this is the simplest way to go through one competition and the result must be awful, lol. There are lot of detail I have not mentioned or learned, like the powerful model <strong>XSBoost</strong>.</p>
+<p>Anyway, this is my first blog about data science, hope it will be a good beginning.</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 Miles<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
