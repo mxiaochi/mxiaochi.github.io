@@ -88,6 +88,17 @@ Basically,  Titanic gives us an Excel called train.csv which contains passengers
 
     <!-- Google Analytics -->
     
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-125317244-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
 
 
     <!-- favicon -->
@@ -152,7 +163,7 @@ Basically,  Titanic gives us an Excel called train.csv which contains passengers
                     </li>
                 
                     <li>
-                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                        <a href="https://github.com/wanax">
                             
                                 <i class="fa fa-github fa-stack-2x"></i>
                             
@@ -270,35 +281,30 @@ Basically,  Titanic gives us an Excel called train.csv which contains passengers
 <ul>
 <li><p>Drop</p>
 <p>If one attribute lack most of data, like only one of ten has value, you can just drop it away.</p>
-</li>
-</ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> X_train[X_train.Age.isnull()].value_counts() &gt; max:</span><br><span class="line"> reduced_X_train = X_train.drop(X_train.Age, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-<ul>
+</li>
 <li><p>Set Yes or No</p>
 <p>If attribute which you believe is important however it has half and half missing value,  you can set <strong>Yes</strong> or <strong>No</strong> for value or null. Like this:</p>
-</li>
-</ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df.loc[(df.Cabin.notnull()), <span class="string">'Cabin'</span>] = <span class="string">"Yes"</span></span><br><span class="line">df.loc[(df.Cabin.isnull()), <span class="string">'Cabin'</span>] = <span class="string">"No"</span></span><br></pre></td></tr></table></figure>
-<ul>
+</li>
 <li><p>Impute</p>
 <p>  <strong>KSLearn</strong> provides us an easy way to fill vacancy:</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##Get Model Score from Imputation</span></span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing.imputation <span class="keyword">import</span> Imputer</span><br><span class="line">my_imputer = Imputer()</span><br><span class="line">imputed_X_train = my_imputer.fit_transform(X_train)</span><br><span class="line">imputed_X_test = my_imputer.transform(X_test)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##Get Model Score from Imputation</span></span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing.imputation <span class="keyword">import</span> Imputer</span><br><span class="line">my_imputer = Imputer()</span><br><span class="line">imputed_X_train = my_imputer.fit_transform(X_train)</span><br><span class="line">imputed_X_test = my_imputer.transform(X_test)</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>Using Categorical Data with One Hot Encoding</p>
+<li>Using Categorical Data with One Hot Encoding</li>
+</ul>
 <p>For example, if you people responded to a survey about which what brand of car they owned, the result would be categorical (because the answers would be things like <em>Honda</em>, <em>Toyota</em>, <em>Ford</em>, <em>None</em>, etc.). Responses fall into a fixed set of categories.</p>
 <p>You will get an error if you try to plug these variables into most machine learning models in Python without “encoding” them first. Here we’ll show the most popular method for encoding categorical variables.</p>
-  <img src="/2018/09/03/Data-Science-Kaggle-First-Step/one-hot.png">
+ <img src="/2018/09/03/Data-Science-Kaggle-First-Step/one-hot.png">
 <p>It’s most common to one-hot encode these “object” columns, since they can’t be plugged directly into most models. Pandas offers a convenient function called <strong>get_dummies</strong> to get one-hot encodings. Call it like this:</p>
-</li>
-</ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">one_hot_encoded_training_predictors = pd.get_dummies(train_predictors)</span><br></pre></td></tr></table></figure>
 <p>To see detail about this, can view <a href="https://www.kaggle.com/dansbecker/using-categorical-data-with-one-hot-encoding" target="_blank" rel="noopener">Using Categorical Data with One Hot Encoding</a></p>
-<p>   <strong>4. Modeling</strong></p>
-<p>   Finally, we move here….</p>
-<p>   After we have cleaned up data, we can choose one machine learning model to predict. I have just learned <strong>Decision Tree</strong> and <strong>Random Forest</strong>, and have heard the <strong>XGBoost</strong> is the leading model for working with standard tabular data <strong>XGBoost</strong> models dominate many <strong>Kaggle</strong> competitions.</p>
-<p>   To use one model, the code like this:</p>
+<p><strong>4. Modeling</strong></p>
+<p>Finally, we move here….</p>
+<p>After we have cleaned up data, we can choose one machine learning model to predict. I have just learned <strong>Decision Tree</strong> and <strong>Random Forest</strong>, and have heard the <strong>XGBoost</strong> is the leading model for working with standard tabular data <strong>XGBoost</strong> models dominate many <strong>Kaggle</strong> competitions.</p>
+<p>To use one model, the code like this:</p>
+</li>
+</ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">model = RandomForestRegressor()</span><br><span class="line">model.fit(X_train, y_train)</span><br><span class="line">preds = model.predict(X_test)</span><br></pre></td></tr></table></figure>
 <p>   So easy, isn’t it? The <em>preds</em> is our target which should produce an Excel file to submit to <strong>Kaggle</strong>.</p>
 <p>   <strong>5. Evaluation</strong></p>
@@ -320,6 +326,12 @@ Basically,  Titanic gives us an Excel called train.csv which contains passengers
             
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
 
 
                 </div>
@@ -343,7 +355,7 @@ Basically,  Titanic gives us an Excel called train.csv which contains passengers
 
                     
                         <li>
-                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                            <a href="https://github.com/wanax" target="_blank">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -379,6 +391,18 @@ Basically,  Titanic gives us an Excel called train.csv which contains passengers
 <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
 <!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'sonneblog';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
