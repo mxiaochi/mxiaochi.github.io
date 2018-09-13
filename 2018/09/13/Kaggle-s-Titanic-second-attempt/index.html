@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="Since first submit my prediction, it’s past almost 2 weeks. During this two weeks, I have studied some ML models and data visualisation from Faster Da"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Miles"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Kaggle&#39;s Titanic second attempt"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Since first submit my prediction, it’s past almost 2 weeks. During this two weeks, I have studied some ML models and data visualisation from Faster Da"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Leaky"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Kaggle&#39;s Titanic second attempt - Leaky</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-125317244-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="favicon.ico"/>
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Leaky</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/wanax">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Kaggle's Titanic second attempt</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-09-13
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+<a href="/categories/DS/">DS</a>
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Since first submit my prediction, it’s past almost 2 weeks. During this two weeks, I have studied some ML models and data visualisation from <a href="https://www.kaggle.com/learn/overview?utm_medium=email&amp;utm_source=intercom&amp;utm_campaign=data+projects+onboarding" target="_blank" rel="noopener">Faster Data Science Education</a> and then know more about the work flow about data analysis, here is my conclusion.</p>
+<p>This is my first submission score:</p>
+<img src="/2018/09/13/Kaggle-s-Titanic-second-attempt/first.png">
+<p>It’s about 7700+th, not good. Then I learned some advance skills to improve my score, the most important article which I get improved is  <a href="https://www.kaggle.com/yassineghouzam/titanic-top-4-with-ensemble-modeling" target="_blank" rel="noopener">Titanic Top 4% with ensemble modeling</a> and I sum up some good ideas to list.</p>
+<h2 id="Improvement"><a href="#Improvement" class="headerlink" title="Improvement"></a>Improvement</h2><h3 id="1-Outlier-Drop"><a href="#1-Outlier-Drop" class="headerlink" title="1. Outlier Drop"></a>1. Outlier Drop</h3><p>Some data they give us is too big or small which will affect the regression heavily resulting in a bad prediction model.  So we should drop them and I use <strong>IQR</strong> to judge who is the wrong guy.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">detect_outliers</span><span class="params">(df,n,features)</span>:</span></span><br><span class="line">    outlier_indices = []</span><br><span class="line"></span><br><span class="line">    <span class="comment"># iterate over features(columns)</span></span><br><span class="line">    <span class="keyword">for</span> col <span class="keyword">in</span> features:</span><br><span class="line">        <span class="comment"># 1st quartile (25%)</span></span><br><span class="line">        Q1 = np.percentile(df[col], <span class="number">25</span>)</span><br><span class="line">        <span class="comment"># 3rd quartile (75%)</span></span><br><span class="line">        Q3 = np.percentile(df[col],<span class="number">75</span>)</span><br><span class="line">        <span class="comment"># Interquartile range (IQR)</span></span><br><span class="line">        IQR = Q3 - Q1</span><br><span class="line"></span><br><span class="line">        <span class="comment"># outlier step</span></span><br><span class="line">        outlier_step = <span class="number">1.5</span> * IQR</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Determine a list of indices of outliers for feature col</span></span><br><span class="line">        outlier_list_col = df[(df[col] &lt; Q1 - outlier_step) | (df[col] &gt; Q3 + outlier_step )].index</span><br><span class="line"></span><br><span class="line">        <span class="comment"># append the found outlier indices for col to the list of outlier indices</span></span><br><span class="line">        outlier_indices.extend(outlier_list_col)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># select observations containing more than 2 outliers</span></span><br><span class="line">    outlier_indices = Counter(outlier_indices)        </span><br><span class="line">    multiple_outliers = list( k <span class="keyword">for</span> k, v <span class="keyword">in</span> outlier_indices.items() <span class="keyword">if</span> v &gt; n )</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> multiple_outliers</span><br></pre></td></tr></table></figure>
+<h3 id="2-Join-Train-amp-Test-Data-to-process"><a href="#2-Join-Train-amp-Test-Data-to-process" class="headerlink" title="2. Join Train &amp; Test Data to process"></a>2. Join Train &amp; Test Data to process</h3><p>At first, I just use train data to train my model, however it has two obvious disadvantages, One is when I finish clear up my train data and produce a prediction model, I should repeat again to deal with my test data. And the other one is  joined data can make imputation more precise, since you are using more observations to calculate median.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">train_len = len(train)</span><br><span class="line">dataset = pd.concat(objs=[train, test], axis=<span class="number">0</span>, sort=<span class="keyword">False</span>).reset_index(drop=<span class="keyword">True</span>)</span><br><span class="line">dataset = dataset.fillna(np.nan)</span><br></pre></td></tr></table></figure>
+<h3 id="3-Use-Heat-Map-and-Factor-Plot-to-show-relation"><a href="#3-Use-Heat-Map-and-Factor-Plot-to-show-relation" class="headerlink" title="3. Use Heat Map and Factor Plot to show relation"></a>3. Use Heat Map and Factor Plot to show relation</h3><p>Obviously, <strong>Heatmap</strong> is convenience for us to know about some relations among attributes.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g = sns.heatmap(train[[<span class="string">"Survived"</span>,<span class="string">"SibSp"</span>,<span class="string">"Parch"</span>,<span class="string">"Age"</span>,<span class="string">"Fare"</span>]].corr(), annot=<span class="keyword">True</span>, fmt=<span class="string">".2f"</span>, cmap=<span class="string">"coolwarm"</span>)</span><br></pre></td></tr></table></figure>
+<img src="/2018/09/13/Kaggle-s-Titanic-second-attempt/heatmap.png">
+<p>Also, <strong>FactorPlot</strong> can show single attribute how to affect target:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">g = sns.factorplot(x=<span class="string">"SibSp"</span>, y=<span class="string">"Survived"</span>, data=train, kind=<span class="string">"bar"</span>, size=<span class="number">6</span>, palette=<span class="string">"muted"</span>)</span><br><span class="line">g.despine(left=<span class="keyword">True</span>)</span><br><span class="line">g = g.set_ylabels(<span class="string">"survival probability"</span>)</span><br><span class="line"></span><br><span class="line">g = sns.factorplot(x=<span class="string">"Parch"</span>, y=<span class="string">"Survived"</span>, data=train, kind=<span class="string">"bar"</span>, size=<span class="number">6</span>, palette=<span class="string">"muted"</span>)</span><br><span class="line">g.despine(left=<span class="keyword">True</span>)</span><br><span class="line">g = g.set_ylabels(<span class="string">"survival probability"</span>)</span><br></pre></td></tr></table></figure>
+<img src="/2018/09/13/Kaggle-s-Titanic-second-attempt/sibsp.png">
+<img src="/2018/09/13/Kaggle-s-Titanic-second-attempt/parch.png">
+<h3 id="4-Using-median-to-fill-missing-value"><a href="#4-Using-median-to-fill-missing-value" class="headerlink" title="4. Using median to fill missing value"></a>4. Using median to fill missing value</h3><p>The author is so talented that he analysis the relationship of <strong>SibSp</strong>, <strong>Parch</strong>, <strong>Pclass</strong> and <strong>Age</strong> and decided to use <strong>SibSP</strong>, <strong>Parch</strong> and <strong>Pclass</strong> in order to impute the missing ages.</p>
+<p>He uses <strong>Factor Box</strong> to show these relations:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">g = sns.factorplot(y = <span class="string">"Age"</span>, x = <span class="string">"Sex"</span>, data=dataset, kind=<span class="string">"box"</span>)</span><br><span class="line">g = sns.factorplot(y = <span class="string">"Age"</span>, x = <span class="string">"Sex"</span>, hue=<span class="string">"Pclass"</span>, data=dataset, kind=<span class="string">"box"</span>)</span><br><span class="line">g = sns.factorplot(y = <span class="string">"Age"</span>, x = <span class="string">"Parch"</span>, data=dataset, kind=<span class="string">"box"</span>)</span><br><span class="line">g = sns.factorplot(y = <span class="string">"Age"</span>, x = <span class="string">"SibSp"</span>, data=dataset, kind=<span class="string">"box"</span>)</span><br></pre></td></tr></table></figure>
+<img src="/2018/09/13/Kaggle-s-Titanic-second-attempt/sex-age.png">
+<img src="/2018/09/13/Kaggle-s-Titanic-second-attempt/parch-age.png">
+<p>The strategy is fill <strong>Age</strong> with the median age of similar rows according to <strong>Pclass</strong>, <strong>Parch</strong> and <strong>SibSp</strong>. It’s very convenience and convince.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">index_Nan_age = list(dataset[<span class="string">"Age"</span>][dataset[<span class="string">"Age"</span>].isnull()].index)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> index_Nan_age:</span><br><span class="line">    age_med = dataset[<span class="string">"Age"</span>].median()</span><br><span class="line">    age_pred = dataset[<span class="string">"Age"</span>][((dataset[<span class="string">'SibSp'</span>] == dataset.iloc[i][<span class="string">"SibSp"</span>]) &amp;</span><br><span class="line">                              (dataset[<span class="string">'Parch'</span>] == dataset.iloc[i][<span class="string">"Parch"</span>]) &amp;</span><br><span class="line">                              (dataset[<span class="string">'Pclass'</span>] == dataset.iloc[i][<span class="string">"Pclass"</span>]))].median()</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> np.isnan(age_pred):</span><br><span class="line">        dataset[<span class="string">'Age'</span>].iloc[i] = age_pred</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        dataset[<span class="string">'Age'</span>].iloc[i] = age_med</span><br></pre></td></tr></table></figure>
+<h3 id="5-If-distribute-is-skewed-which-could-lead-to-overweight-we-can-use-log-function-to-reduce-it"><a href="#5-If-distribute-is-skewed-which-could-lead-to-overweight-we-can-use-log-function-to-reduce-it" class="headerlink" title="5. If distribute is skewed which could lead to overweight, we can use log function to reduce it"></a>5. If distribute is skewed which could lead to overweight, we can use log function to reduce it</h3><p>At first we can see the distribution about <strong>Fare</strong> is very skewed:</p>
+<img src="/2018/09/13/Kaggle-s-Titanic-second-attempt/fare-skewed.png">
+<p> we can use <code>Log</code> function to reduce it:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dataset[<span class="string">"Fare"</span>] = dataset[<span class="string">"Fare"</span>].map(<span class="keyword">lambda</span> i : np.log(i) <span class="keyword">if</span> i &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<img src="/2018/09/13/Kaggle-s-Titanic-second-attempt/after-fare.png">
+<h3 id="6-How-to-deal-with-string-columns"><a href="#6-How-to-deal-with-string-columns" class="headerlink" title="6. How to deal with string columns"></a>6. How to deal with string columns</h3><ul>
+<li><p>Use Capital</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">dataset_title = [i.split(<span class="string">","</span>)[<span class="number">1</span>].split(<span class="string">"."</span>)[<span class="number">0</span>].strip() <span class="keyword">for</span> i <span class="keyword">in</span> dataset[<span class="string">"Name"</span>]]</span><br><span class="line">dataset[<span class="string">"Title"</span>] = pd.Series(dataset_title)</span><br><span class="line">dataset[<span class="string">"Title"</span>] = dataset[<span class="string">"Title"</span>].replace([<span class="string">'Lady'</span>, <span class="string">'the Countess'</span>, <span class="string">'Countess'</span>,<span class="string">'Capt'</span>, <span class="string">'Col'</span>,<span class="string">'Don'</span>,</span><br><span class="line">                                              <span class="string">'Dr'</span>, <span class="string">'Major'</span>, <span class="string">'Rev'</span>, <span class="string">'Sir'</span>, <span class="string">'Jonkheer'</span>, <span class="string">'Dona'</span>], <span class="string">'Rare'</span>)</span><br><span class="line"></span><br><span class="line">dataset[<span class="string">"Title"</span>] = dataset[<span class="string">"Title"</span>].map(&#123;<span class="string">"Master"</span>:<span class="number">0</span>, <span class="string">"Miss"</span>:<span class="number">1</span>, <span class="string">"Ms"</span> : <span class="number">1</span> ,</span><br><span class="line">                                       <span class="string">"Mme"</span>:<span class="number">1</span>, <span class="string">"Mlle"</span>:<span class="number">1</span>, <span class="string">"Mrs"</span>:<span class="number">1</span>, <span class="string">"Mr"</span>:<span class="number">2</span>, <span class="string">"Rare"</span>:<span class="number">3</span>&#125;)</span><br><span class="line"></span><br><span class="line">dataset[<span class="string">"Title"</span>] = dataset[<span class="string">"Title"</span>].astype(int)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Get dummies</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Ticket = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> list(dataset.Ticket):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> i.isdigit() :</span><br><span class="line">        Ticket.append(i.replace(<span class="string">"."</span>,<span class="string">""</span>).replace(<span class="string">"/"</span>,<span class="string">""</span>).strip().split(<span class="string">' '</span>)[<span class="number">0</span>]) <span class="comment">#Take prefix</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        Ticket.append(<span class="string">"X"</span>)</span><br><span class="line"></span><br><span class="line">dataset[<span class="string">"Ticket"</span>] = Ticket</span><br><span class="line">dataset = pd.get_dummies(dataset, columns = [<span class="string">"Ticket"</span>], prefix=<span class="string">"T"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Replace the Cabin number by the type of Cabin 'X' if not</span></span><br><span class="line">dataset[<span class="string">'Cabin'</span>] = pd.Series(i[<span class="number">0</span>] <span class="keyword">if</span> <span class="keyword">not</span> pd.isnull(i) <span class="keyword">else</span> <span class="string">'X'</span> <span class="keyword">for</span> i <span class="keyword">in</span> dataset[<span class="string">'Cabin'</span>])</span><br><span class="line">dataset = pd.get_dummies(dataset, columns=[<span class="string">'Cabin'</span>], prefix=<span class="string">"Cabin"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="7-Add-new-attribute-into-data-frame-by-joining-exist-attribute"><a href="#7-Add-new-attribute-into-data-frame-by-joining-exist-attribute" class="headerlink" title="7. Add new attribute into data frame by joining exist attribute"></a>7. Add new attribute into data frame by joining exist attribute</h3><p>The author create <strong>Family Size</strong> cause we can imagine that large families will have more difficulties to evacuate, looking for theirs sisters/brothers/parents during the evacuation.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dataset[<span class="string">"Fsize"</span>] = dataset[<span class="string">"SibSp"</span>] + dataset[<span class="string">"Parch"</span>] + <span class="number">1</span></span><br><span class="line">g = sns.factorplot(x=<span class="string">"Fsize"</span>, y=<span class="string">"Survived"</span>, data=dataset)</span><br></pre></td></tr></table></figure>
+<img src="/2018/09/13/Kaggle-s-Titanic-second-attempt/fsize.png">
+<p>The family size seems to play an important role, survival probability is worst for large families.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dataset[<span class="string">'Single'</span>] = dataset[<span class="string">'Fsize'</span>].map(<span class="keyword">lambda</span> s : <span class="number">1</span> <span class="keyword">if</span> s == <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span>)</span><br><span class="line">dataset[<span class="string">'SmallF'</span>] = dataset[<span class="string">'Fsize'</span>].map(<span class="keyword">lambda</span> s : <span class="number">1</span> <span class="keyword">if</span> s == <span class="number">2</span> <span class="keyword">else</span> <span class="number">0</span>)</span><br><span class="line">dataset[<span class="string">'MedF'</span>] = dataset[<span class="string">'Fsize'</span>].map(<span class="keyword">lambda</span> s : <span class="number">1</span> <span class="keyword">if</span> <span class="number">3</span> &lt;= s &lt;= <span class="number">4</span> <span class="keyword">else</span> <span class="number">0</span>)</span><br><span class="line">dataset[<span class="string">'LargeF'</span>] = dataset[<span class="string">'Fsize'</span>].map(<span class="keyword">lambda</span> s : <span class="number">1</span> <span class="keyword">if</span> s &gt;= <span class="number">5</span> <span class="keyword">else</span> <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="8-Choose-ML-model-via-cross-val-score"><a href="#8-Choose-ML-model-via-cross-val-score" class="headerlink" title="8. Choose ML model via cross_val_score"></a>8. Choose ML model via <code>cross_val_score</code></h3><p>We can use <code>cross_val_score</code> to compare some <strong>ML</strong> model in order to choose the best one.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">kfold = StratifiedKFold(n_splits=<span class="number">10</span>)</span><br><span class="line">n_job = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Modeling step Test differents algorithms</span></span><br><span class="line">random_state = <span class="number">2</span></span><br><span class="line">classifiers = []</span><br><span class="line">classifiers.append(SVC(random_state=random_state))</span><br><span class="line">classifiers.append(DecisionTreeClassifier(random_state=random_state))</span><br><span class="line">classifiers.append(AdaBoostClassifier(DecisionTreeClassifier(random_state=random_state),random_state=random_state,learning_rate=<span class="number">0.1</span>))</span><br><span class="line">classifiers.append(RandomForestClassifier(random_state=random_state))</span><br><span class="line">classifiers.append(ExtraTreesClassifier(random_state=random_state))</span><br><span class="line">classifiers.append(GradientBoostingClassifier(random_state=random_state))</span><br><span class="line">classifiers.append(MLPClassifier(random_state=random_state))</span><br><span class="line">classifiers.append(KNeighborsClassifier())</span><br><span class="line">classifiers.append(LogisticRegression(random_state = random_state))</span><br><span class="line">classifiers.append(LinearDiscriminantAnalysis())</span><br><span class="line"></span><br><span class="line">cv_results = []</span><br><span class="line"><span class="keyword">for</span> classifier <span class="keyword">in</span> classifiers :</span><br><span class="line">    cv_results.append(cross_val_score(classifier,</span><br><span class="line">                                      X_train,</span><br><span class="line">                                      y = Y_train,</span><br><span class="line">                                      scoring = <span class="string">"accuracy"</span>,</span><br><span class="line">                                      cv = kfold,</span><br><span class="line">                                      n_jobs=n_job))</span><br><span class="line"></span><br><span class="line">cv_means = []</span><br><span class="line">cv_std = []</span><br><span class="line"><span class="keyword">for</span> cv_result <span class="keyword">in</span> cv_results:</span><br><span class="line">    cv_means.append(cv_result.mean())</span><br><span class="line">    cv_std.append(cv_result.std())</span><br><span class="line"></span><br><span class="line">cv_res = pd.DataFrame(&#123;<span class="string">"CrossValMeans"</span>:cv_means,<span class="string">"CrossValerrors"</span>: cv_std,<span class="string">"Algorithm"</span>:[<span class="string">"SVC"</span>,<span class="string">"DecisionTree"</span>,<span class="string">"AdaBoost"</span>,</span><br><span class="line"><span class="string">"RandomForest"</span>,<span class="string">"ExtraTrees"</span>,<span class="string">"GradientBoosting"</span>,<span class="string">"MultipleLayerPerceptron"</span>,<span class="string">"KNeighboors"</span>,<span class="string">"LogisticRegression"</span>,<span class="string">"LinearDiscriminantAnalysis"</span>]&#125;)</span><br><span class="line"></span><br><span class="line">g = sns.barplot(<span class="string">"CrossValMeans"</span>,<span class="string">"Algorithm"</span>,data = cv_res, palette=<span class="string">"Set3"</span>,orient = <span class="string">"h"</span>,**&#123;<span class="string">'xerr'</span>:cv_std&#125;)</span><br><span class="line">g.set_xlabel(<span class="string">"Mean Accuracy"</span>)</span><br><span class="line">g = g.set_title(<span class="string">"Cross validation scores"</span>)</span><br></pre></td></tr></table></figure>
+<img src="/2018/09/13/Kaggle-s-Titanic-second-attempt/ml-score.png">
+<h3 id="9-Model-ensemble"><a href="#9-Model-ensemble" class="headerlink" title="9. Model ensemble"></a>9. Model ensemble</h3><p>I think Model ensemble is the most powerful tool as me know. It can let us choose serval models to deal with data together.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">votingC = VotingClassifier(estimators=[(<span class="string">'rfc'</span>, RFC_best), (<span class="string">'extc'</span>, ExtC_best),</span><br><span class="line">(<span class="string">'svc'</span>, SVMC_best), (<span class="string">'adac'</span>,ada_best),(<span class="string">'gbc'</span>,GBC_best)], voting=<span class="string">'soft'</span>, n_jobs=n_job)</span><br><span class="line"></span><br><span class="line">votingC = votingC.fit(X_train, Y_train)</span><br><span class="line"></span><br><span class="line">test_Survived = pd.Series(votingC.predict(test), name=<span class="string">"Survived"</span>)</span><br><span class="line"></span><br><span class="line">results = pd.concat([IDtest,test_Survived],axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">results.to_csv(<span class="string">"preds.csv"</span>,index=<span class="keyword">False</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>So, that’s what I have learned from <strong>Yassine Ghouzam</strong>, he gives me lots of inspiration. And it makes me improve my score  a lot:</p>
+<img src="/2018/09/13/Kaggle-s-Titanic-second-attempt/single-core.png">
+<img src="/2018/09/13/Kaggle-s-Titanic-second-attempt/12-core.png">
+<img src="/2018/09/13/Kaggle-s-Titanic-second-attempt/final.png">
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/wanax" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 Miles<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'sonneblog';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
