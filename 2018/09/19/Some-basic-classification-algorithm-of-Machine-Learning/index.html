@@ -120,7 +120,18 @@
 <meta property="og:image" content="http://yoursite.com/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/entropy.png">
 <meta property="og:image" content="http://yoursite.com/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/knn_sample.png">
 <meta property="og:image" content="http://yoursite.com/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/knn_dis.png">
-<meta property="og:updated_time" content="2018-09-20T06:38:12.718Z">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/svm_1.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/svm_2.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/svm_3.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/svm_4.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/svm_5.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/svm_6.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/nn_1.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/nn_2.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/nn_3.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/nn_4.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/nn_5.png">
+<meta property="og:updated_time" content="2018-09-22T06:45:40.401Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Some basic classification algorithm of Machine Learning">
 <meta name="twitter:description" content="Today lets review some basic classification algorithm of Machine Learning As we know, Machine Learning generally divided to Supervised Learning and Unsupervised Learning and Supervised Learning has tw">
@@ -354,7 +365,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-20 02:38:12" itemprop="dateModified" datetime="2018-09-20T02:38:12-04:00">2018-09-20</time>
+                <time title="Modified: 2018-09-22 02:45:40" itemprop="dateModified" datetime="2018-09-22T02:45:40-04:00">2018-09-22</time>
               
             
           </span>
@@ -561,6 +572,80 @@
 <img src="/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/knn_dis.png">
 </li>
 </ol>
+<h2 id="3-Support-Vector-Machine-SVM"><a href="#3-Support-Vector-Machine-SVM" class="headerlink" title="3. Support Vector Machine (SVM)"></a>3. Support Vector Machine (SVM)</h2><p>Before  <em>Deep Learning</em> showing up, SVM is the most successful and the best algorithm in the machine learning.</p>
+<img src="/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/svm_1.png">
+<p>Suppose we trade a data point as a p-dimensional vector, the target of SVM is help us to find a (p - 1) - dimensional <a href="https://en.wikipedia.org/wiki/Hyperplane" target="_blank" rel="noopener">hyperplane</a> which can separate such points, just like picture above. One reasonable choice as the best hyperplane is the one that represents the largest separation, or <a href="https://en.wikipedia.org/wiki/Margin" target="_blank" rel="noopener">margin</a> between the two classes. So we choose the hyperplane so that the distance from it to the nearest data point on each side is maximized. If such a hyperplane exists, it is known as the <em>maximum-margin hyperplane</em> and the linear classifier it defines is known as a <em>maximum margin classifier</em> or equivalently, the <em>perceptron of optimal stability.</em> </p>
+<p>There are two kinds of SVM:</p>
+<ol>
+<li>Linear separable</li>
+<li>Linear inseparable or Nonlinear classification</li>
+</ol>
+<img src="/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/svm_2.png">
+<h3 id="1-Linear-Separable"><a href="#1-Linear-Separable" class="headerlink" title="1. Linear Separable"></a>1. Linear Separable</h3><p>If the train dataset of n points like this:<br>$$<br>(\overrightarrow{x_1}, y_1),…, (\overrightarrow{x_n}, y_n)<br>$$<br>An hyperplane can be written as the set of points x satisfying<br>$$<br>\overrightarrow{w} * \overrightarrow{x} - b = 0<br>$$<br>W: weight vector<br>$$<br>W = {w_1, w_2,…, w_n}<br>$$</p>
+<p>The points which locate on the hyperplane are called <strong>Support Vectors</strong></p>
+<img src="/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/svm_3.png">
+<p>Like point A and B, we call them are <strong>Support Vectors</strong></p>
+<p>The vertical distance between hyperplane and support line is:<br>$$<br>\frac{1}{\mid\mid w \mid\mid}<br>$$<br>So the <em>Large Margin</em> is:<br>$$<br>\frac{2}{\mid\mid w \mid\mid}<br>$$<br><img src="/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/svm_4.png"></p>
+<h3 id="2-Linear-inseparable"><a href="#2-Linear-inseparable" class="headerlink" title="2. Linear inseparable"></a>2. Linear inseparable</h3><p>Two steps:</p>
+<ol>
+<li>Transform points into higher dimensional spaces using nonlinear mapping</li>
+<li>Find a linear hyperplane in this higher dimensional space</li>
+</ol>
+<img src="/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/svm_5.png">
+<p>Watch this video can make you understand more easier.</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/3liCbRZPrZA" frameborder="0" allowfullscreen></iframe></div>
+<p>So, how to transform data points to the higher space?</p>
+<p>If we have a 3 - dimensional vector:<br>$$<br>X = (x_1, x_2, x_3)<br>$$<br>it’s 6 - dimensional is this :<br>$$<br>(x_1, x_2, x_3, x_1^2, x_1x_2, x_1x_3)<br>$$<br>It’s called <strong>Dot product</strong>.</p>
+<p>Obviously, the transform’s calculation is big, do we have a better switch?</p>
+<h4 id="Kernel-trick"><a href="#Kernel-trick" class="headerlink" title="Kernel trick"></a>Kernel trick</h4><p>$$<br>K(x_i,x_j) = \phi(x_i) * \phi(x_j)<br>$$</p>
+<p>There are some common <strong>Kernel functions</strong>:</p>
+<ol>
+<li><p>Polynomial kernel of degree h:<br>$$<br>K(x_i, x_j) = (x_i*x_j+1)^n<br>$$</p>
+</li>
+<li><p>Gaussian radial basis function kernel:</p>
+<p>$$<br>K(x_i, x_j) = e^{-{\mid\mid x_i - x_j \mid\mid^2} / 2\sigma^2}<br>$$</p>
+</li>
+<li><p>Sigmoid function kernel:</p>
+<p>$$<br>K(x_i, x_j) = \tan{(\kappa x_ix_j - \sigma)}<br>$$</p>
+</li>
+</ol>
+<p>Take Polynomial kernel as an example, to compare how much work kernel trick can helps us save:</p>
+<img src="/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/svm_6.png">
+<h2 id="4-Neural-Network"><a href="#4-Neural-Network" class="headerlink" title="4. Neural Network"></a>4. Neural Network</h2><p>Firstly, it’s not actual neural, it just looks like neural because it has lots of nodes and connections. Before I learn this algorithm, I think this algorithm has some magic that can send signal like human neural. Actually, it just some loop to optimal parameters that can predict result. Of course, among these machine learning algorithms, it has the best accuracy.</p>
+<p>NN is based on a collection of connected units or nodes called <a href="https://en.wikipedia.org/wiki/Artificial_neuron" target="_blank" rel="noopener">artificial neurons</a> which loosely model the <a href="https://en.wikipedia.org/wiki/Neuron" target="_blank" rel="noopener">neurons</a> in a biological <a href="https://en.wikipedia.org/wiki/Brain" target="_blank" rel="noopener">brain</a>. Each connection, like the <a href="https://en.wikipedia.org/wiki/Synapse" target="_blank" rel="noopener">synapses</a> in a biological <a href="https://en.wikipedia.org/wiki/Brain" target="_blank" rel="noopener">brain</a>, can transmit a signal from one artificial neuron to another. An artificial neuron that receives a signal can process it and then signal additional artificial neurons connected to it.</p>
+<p>The NN can be described as a multilayer feed-forward neural network and it use <strong>Backpropagation</strong> to optimize parameters.</p>
+<p>There are three components in this network:</p>
+<ol>
+<li>Input layer</li>
+<li>Hidden layer</li>
+<li>Output layer</li>
+</ol>
+<img src="/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/nn_1.png">
+<p>Every layer is formed by node. The begin layer aka Input layer accept train data as beginning. We sum previous layer’s nodes and multiply by weight which the edge between previous node and target node. Then add a bias and be transformed by a activation function to get final result which is current node’s value also is the next layer’s node’s input. Below picture can draw this process:</p>
+<img src="/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/nn_2.png">
+<p>Normally, we can initial weights and bias randomly, between -1 and 1 or -0.5 ~ 0.5. Each node has its own bias.</p>
+<p>This process just forward, so where is <strong>Backpropagation</strong> ?</p>
+<h3 id="Backpropagation"><a href="#Backpropagation" class="headerlink" title="Backpropagation"></a>Backpropagation</h3><p>We can get a predicted value after arrival to the output layer, then compare with target value (true value). It’s not a perfect word, so it must have error between predicted value and target value, then we can reverse the calculation direction to update every edge’s weight and every node’s bias.</p>
+<p><em>i means current layer</em> </p>
+<p>For the output layer (O means output, T means the true value):<br>$$<br>Err_j = O_j(1 - O_j)(T_j - O_j)<br>$$<br>For the hidden layer:<br>$$<br>Err_j = O_j(1 - O_j)\sum_k{Err_kW_{jk}}<br>$$<br>Weight update (l means learning rate, you can image the step of each update. When l is too big, we can not reach the right point because it’s easy to jump over. When l is too small, the efficiency is low):<br>$$<br>\Delta{w_{ij}} = (l)Err_jO_i<br>$$</p>
+<p>$$<br>w_{ij} = w_{ij} + \Delta{w_{ij}}<br>$$</p>
+<p>Bias update:<br>$$<br>\Delta\theta_j = (l)Err_j<br>$$</p>
+<p>$$<br>\theta_j = \theta_j + \Delta\theta_j<br>$$</p>
+<p>When to stop:</p>
+<ol>
+<li>Weight &lt; Threshold</li>
+<li>Accuracy of predict &lt; Threshold</li>
+<li>Loop &gt;= Max</li>
+</ol>
+<p>Take an example to explain:</p>
+<img src="/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/nn_3.png">
+<img src="/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/nn_4.png">
+<p>So, that’s the hole calculation.</p>
+<h3 id="Activation-function"><a href="#Activation-function" class="headerlink" title="Activation function:"></a>Activation function:</h3><ol>
+<li>sigmoid function</li>
+<li>logistic function</li>
+</ol>
+<img src="/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/nn_5.png">
 
       
     </div>
@@ -756,7 +841,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Decision-Tree"><span class="nav-number">1.</span> <span class="nav-text">1. Decision Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-K-Nearest-Neighbor-KNN"><span class="nav-number">2.</span> <span class="nav-text">2. K - Nearest Neighbor (KNN)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Decision-Tree"><span class="nav-number">1.</span> <span class="nav-text">1. Decision Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-K-Nearest-Neighbor-KNN"><span class="nav-number">2.</span> <span class="nav-text">2. K - Nearest Neighbor (KNN)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Support-Vector-Machine-SVM"><span class="nav-number">3.</span> <span class="nav-text">3. Support Vector Machine (SVM)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Linear-Separable"><span class="nav-number">3.1.</span> <span class="nav-text">1. Linear Separable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Linear-inseparable"><span class="nav-number">3.2.</span> <span class="nav-text">2. Linear inseparable</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Kernel-trick"><span class="nav-number">3.2.1.</span> <span class="nav-text">Kernel trick</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Neural-Network"><span class="nav-number">4.</span> <span class="nav-text">4. Neural Network</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Backpropagation"><span class="nav-number">4.1.</span> <span class="nav-text">Backpropagation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Activation-function"><span class="nav-number">4.2.</span> <span class="nav-text">Activation function:</span></a></li></ol></li></ol></div>
             
 
           </div>
