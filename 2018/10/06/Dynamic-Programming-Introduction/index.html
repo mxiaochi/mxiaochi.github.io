@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="1. ConceptIn most of time, we can calculate the result directly. For example, we go for lunch cost $10/person, if we have 10 people, the result = 10  10, if we have 20 people, the result = 20  10. As">
+<meta name="keywords" content="Leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dynamic Programming Introduction">
+<meta property="og:url" content="http://yoursite.com/2018/10/06/Dynamic-Programming-Introduction/index.html">
+<meta property="og:site_name" content="Leaky">
+<meta property="og:description" content="1. ConceptIn most of time, we can calculate the result directly. For example, we go for lunch cost $10/person, if we have 10 people, the result = 10  10, if we have 20 people, the result = 20  10. As">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-10-07T03:57:51.262Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dynamic Programming Introduction">
+<meta name="twitter:description" content="1. ConceptIn most of time, we can calculate the result directly. For example, we go for lunch cost $10/person, if we have 10 people, the result = 10  10, if we have 20 people, the result = 20  10. As">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/06/Dynamic-Programming-Introduction/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Dynamic Programming Introduction | Leaky</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125317244-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-125317244-1');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Leaky</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/06/Dynamic-Programming-Introduction/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Miles">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leaky">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Dynamic Programming Introduction
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-10-06 22:22:31 / Modified: 23:57:51" itemprop="dateCreated datePublished" datetime="2018-10-06T22:22:31-04:00">2018-10-06</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/06/Dynamic-Programming-Introduction/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/10/06/Dynamic-Programming-Introduction/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-Concept"><a href="#1-Concept" class="headerlink" title="1. Concept"></a>1. Concept</h2><p>In most of time, we can calculate the result directly. For example, we go for lunch cost $10/person, if we have 10 people, the result = 10 <em> 10, if we have 20 people, the result = 20 </em> 10. As the number of people growing, we can change the factor to multiply. However, suppose the number of people is huge and change quickly, if we still simply change the factor and multiple, it is a time consuming algorithm. </p>
+<p>On the other hand, we can image that we have a table which records the cost of different number of people we have calculated. And then, if a new number appeared, we search the table to find close number. Such as we should calculate cost of 90001 person and now we search the table and find a cost of 90000 person, so we just use this result plus $10 get the final result.</p>
+<p>Take Fibonacci sequence as an example. </p>
+<p>We can use Recursive function to get the result, like this:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span> <span class="keyword">or</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">return</span> fib(n<span class="number">-1</span>) + fib(n<span class="number">-2</span>)</span><br></pre></td></tr></table></figure>
+<p>Notice that if we call <code>fib(5)</code>, we produce a call tree that calls the function on the same value many different times:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fib(<span class="number">5</span>)</span><br><span class="line">fib(<span class="number">4</span>) + fib(<span class="number">3</span>)</span><br><span class="line">(fib(<span class="number">3</span>) + fib(<span class="number">2</span>)) + (fib(<span class="number">2</span>) + fib(<span class="number">1</span>))</span><br><span class="line">((fib(<span class="number">2</span>) + fib(<span class="number">1</span>)) + (fib(<span class="number">1</span>) + fib(<span class="number">0</span>))) + ((fib(<span class="number">1</span>) + fib(<span class="number">0</span>)) + fib(<span class="number">1</span>))</span><br><span class="line">(((fib(<span class="number">1</span>) + fib(<span class="number">0</span>)) + fib(<span class="number">1</span>)) + (fib(<span class="number">1</span>) + fib(<span class="number">0</span>))) + ((fib(<span class="number">1</span>) + fib(<span class="number">0</span>)) + fib(<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<p>Of course, it works. However, if you try like n = 1000, your IDE will gives you a error like <strong>Stack Over Flow</strong> which means computer repeats lots of times to get result which makes the depth of call tree over limit.</p>
+<p>Now, suppose we have a simple map which maps each value of <code>fib</code> that has already been calculated to its result, and we modify our function to use it and update it. The resulting function requires only O(n) time instead of exponential time.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dic = &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib2</span><span class="params">(n)</span>:</span></span><br><span class="line">    dic[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">    dic[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span>(n <span class="keyword">not</span> <span class="keyword">in</span> dic):</span><br><span class="line">        dic[n] = fib2(n<span class="number">-1</span>) + fib2(n<span class="number">-2</span>)</span><br><span class="line">    <span class="keyword">return</span> dic[n]</span><br></pre></td></tr></table></figure>
+<p>This technique of saving values that have already been calculated is called <em>memoization</em>; this is the top-down approach, since we first break the problem into subproblems and then calculate and store values.</p>
+<p>Basically, we can say that <a href="https://medium.freecodecamp.org/demystifying-dynamic-programming-3efafb8d4296" target="_blank" rel="noopener">Dynamic programming</a> amounts to <strong>breaking down an optimization problem</strong> into simpler sub-problems, and <strong>storing the solution to each sub-problem</strong> so that each sub-problem is only solved once.</p>
+<h2 id="2-Example"><a href="#2-Example" class="headerlink" title="2. Example"></a>2. Example</h2><h3 id="1-Knapsack-problem"><a href="#1-Knapsack-problem" class="headerlink" title="1. Knapsack problem"></a>1. Knapsack problem</h3><p>If you have a bag which can contain N kg, and there are a set of items, each with a weight and a value. You should determine the number of each item to include in this bag so that the total weight is less than or equal to a given limit and the total value is as large as possible.<br>$$<br>maximize \sum_{i=1}^nV_i<br>$$</p>
+<p>$$<br>subject to \sum_{i=1}^nw_i &lt;= W<br>$$</p>
+<h4 id="a-Define-the-equation"><a href="#a-Define-the-equation" class="headerlink" title="a. Define the equation"></a>a. Define the equation</h4><p>Here we have a map like Fibonacci I talked about and define <code>map[i, j]</code> means bag’s total value under there are i items we can select, the limit weight is j.</p>
+<p>Suppose we have already calculated the distribution between 1 to i-1 items we can select and 1 to j the weight limit. Now we should make a decision that should we put <code>i-th</code> in the bag. There are two selections:</p>
+<ol>
+<li>Do not put in, instead using <code>map[i-1, j]</code> as total value</li>
+<li>Put it in</li>
+</ol>
+<p>For 2th, first we should use j minus weight of i to make enough space for i. After we put i in the bag, we calculate the new value in this bag and compare with the first choice, find a bigger value.<br>$$<br>map[i, j] = Max{map[i-1, j-W_i] + Value_i, map[i-1, j]}<br>$$</p>
+<h4 id="b-Calculate-by-hand"><a href="#b-Calculate-by-hand" class="headerlink" title="b. Calculate by hand"></a>b. <a href="https://blog.csdn.net/mu399/article/details/7722810" target="_blank" rel="noopener">Calculate by hand</a></h4><p>Suppose there are five items a, b, c, d, e, weights are:<br>$$<br>W_a = 2, W_b = 2, W_c = 6, W_d = 5, W_e = 4,<br>$$<br>value is :<br>$$<br>V_a = 6, V_b = 3, V_c = 5, V_d = 4, V_e = 6,<br>$$<br>Now, you have a bag which can contain 10 weights, how to select?</p>
+<p><em>You should calculate this table bottom to top, left to right</em></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>weight</th>
+<th>value</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>2</td>
+<td>6</td>
+<td>0</td>
+<td>6</td>
+<td>6</td>
+<td>9</td>
+<td>9</td>
+<td>12</td>
+<td>12</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+</tr>
+<tr>
+<td>b</td>
+<td>2</td>
+<td>3</td>
+<td>0</td>
+<td>3</td>
+<td>3</td>
+<td>6</td>
+<td>6</td>
+<td>9</td>
+<td>9</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+</tr>
+<tr>
+<td>c</td>
+<td>6</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>10</td>
+<td>11</td>
+</tr>
+<tr>
+<td>d</td>
+<td>5</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr>
+<td>e</td>
+<td>4</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p> It’s easy to understand, like Fibonacci we talk above, if we want to get the result of <code>fib(n)</code>, we first calculate <code>f(1), f(2), f(3), f(4)</code> and store them in a map, when we calculate <code>f(5)</code>, what we should do is just pick up  these value to sum up.</p>
+<p>So in Knapsack problem, if we wander the result of a, b, c, d, e, we can make a decision about if we only have <code>e</code> item that how to chose firstly. And then, if we have <code>e, d</code> how to chose? Of course, how to chose <code>e, d</code> is base on the table of how chose <code>e</code>. And the like, we get answer about how to chose <code>a, b, c, d, e</code> is base on how to chose <code>b, c, d, e</code>.</p>
+<h4 id="c-Calculate-by-code"><a href="#c-Calculate-by-code" class="headerlink" title="c. Calculate by code"></a>c. Calculate by code</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getPackage</span><span class="params">(bagItems, bagSize)</span>:</span></span><br><span class="line">    </span><br><span class="line">    matrix = [[<span class="number">0</span> <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, bagSize + <span class="number">1</span>)] <span class="keyword">for</span> y <span class="keyword">in</span> range(len(bagItems))]</span><br><span class="line">    <span class="keyword">for</span> m <span class="keyword">in</span> range(<span class="number">1</span>, bagSize + <span class="number">1</span>):</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> range(len(bagItems)):</span><br><span class="line">            item = bagItems[n]</span><br><span class="line">            <span class="keyword">if</span> item.weight &gt; m: <span class="comment">#whole bag can not contain this item</span></span><br><span class="line">                <span class="keyword">if</span> n == <span class="number">0</span>: <span class="comment">#only have one item to chose</span></span><br><span class="line">                    matrix[n][m] = <span class="number">0</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    matrix[n][m] = matrix[n<span class="number">-1</span>][m] <span class="comment">#chose the result of n-1 items </span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                newPrice = <span class="number">0</span></span><br><span class="line">                <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">                    matrix[n][m] = item.value <span class="comment">#only have one item, put it in</span></span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    newPrice = matrix[n<span class="number">-1</span>][m - item.weight] + item.value</span><br><span class="line">                matrix[n][m] = max(newPrice, matrix[n<span class="number">-1</span>][m])</span><br><span class="line">    </span><br><span class="line">    answers = []</span><br><span class="line">    curSize = bagSize</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(bagItems)<span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">        item = bagItems[i]</span><br><span class="line">        <span class="keyword">if</span> curSize == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">0</span> <span class="keyword">and</span> curSize &gt; <span class="number">0</span>:</span><br><span class="line">            answers.append(item.name)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> matrix[i][curSize] - matrix[i - <span class="number">1</span>][curSize - item.weight] == item.value:</span><br><span class="line">            answers.append(item.name)</span><br><span class="line">            curSize -= item.weight</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">return</span> answers</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    </span><br><span class="line">    bagSize = <span class="number">10</span></span><br><span class="line">    names = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</span><br><span class="line">    weights = [<span class="number">2</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">4</span>]</span><br><span class="line">    values = [<span class="number">6</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">6</span>]</span><br><span class="line">    bagItems = []</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(names)):</span><br><span class="line">        item = PackageItem(names[i], weights[i], values[i])</span><br><span class="line">        bagItems.append(item)</span><br><span class="line">    </span><br><span class="line">    print(getPackage(bagItems, bagSize))</span><br></pre></td></tr></table></figure>
+<h3 id="2-Longest-Palindromic-Substring"><a href="#2-Longest-Palindromic-Substring" class="headerlink" title="2. Longest Palindromic Substring"></a>2. <a href="https://leetcode.com/problems/longest-palindromic-substring/description/" target="_blank" rel="noopener">Longest Palindromic Substring</a></h3><ol>
+<li>Make a matrix - m, <code>m[i, j]</code>  means i to j is palindromic substring or not</li>
+<li>If <code>s[i] != s[j]</code>, <code>m[i, j] = 0</code>, <code>s[i to j]</code> is not palindromic substring</li>
+<li>if <code>s[i] == s[j]</code>, we look <code>m[i+i, j-1]</code> = 1 or 0</li>
+</ol>
+<p>Firstly, we set every single character is a palindromic substring which length = 1. And then use <code>step</code> from 1 to <code>len(string)</code>, to find every length of palindromic substring.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    </span><br><span class="line">    string = <span class="string">'cbbd'</span></span><br><span class="line">    martix = [[<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(len(string))] <span class="keyword">for</span> j <span class="keyword">in</span> range(len(string))]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> len(string) == <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">""</span>)</span><br><span class="line">    <span class="keyword">if</span> len(string) == <span class="number">1</span>:</span><br><span class="line">        print(string)</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(string)):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(string)):</span><br><span class="line">            <span class="keyword">if</span> i &gt;= j:</span><br><span class="line">                martix[i][j] = <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">    step = <span class="number">1</span></span><br><span class="line">    maxLen = <span class="number">1</span></span><br><span class="line">    left = <span class="number">0</span></span><br><span class="line">    right = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> step <span class="keyword">in</span> range(<span class="number">1</span>, len(string)):</span><br><span class="line">       <span class="keyword">for</span> i <span class="keyword">in</span> range(len(string) - step):</span><br><span class="line">           j = i + step</span><br><span class="line">           <span class="keyword">if</span> string[i] != string[j]:</span><br><span class="line">               martix[i][j] = <span class="number">0</span></span><br><span class="line">           <span class="keyword">else</span>:</span><br><span class="line">               martix[i][j] = martix[i+<span class="number">1</span>][j<span class="number">-1</span>]</span><br><span class="line">               <span class="keyword">if</span> martix[i][j] == <span class="number">1</span>:</span><br><span class="line">                   <span class="keyword">if</span> step + <span class="number">1</span> &gt; maxLen:</span><br><span class="line">                       maxLen = step + <span class="number">1</span></span><br><span class="line">                       left = i</span><br><span class="line">                       right = j</span><br><span class="line">    print(string[left:right+<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/" rel="next" title="Some basic classification algorithm of Machine Learning">
+                <i class="fa fa-chevron-left"></i> Some basic classification algorithm of Machine Learning
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Miles</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Concept"><span class="nav-number">1.</span> <span class="nav-text">1. Concept</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Example"><span class="nav-number">2.</span> <span class="nav-text">2. Example</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Knapsack-problem"><span class="nav-number">2.1.</span> <span class="nav-text">1. Knapsack problem</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-Define-the-equation"><span class="nav-number">2.1.1.</span> <span class="nav-text">a. Define the equation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-Calculate-by-hand"><span class="nav-number">2.1.2.</span> <span class="nav-text">b. Calculate by hand</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-Calculate-by-code"><span class="nav-number">2.1.3.</span> <span class="nav-text">c. Calculate by code</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Longest-Palindromic-Substring"><span class="nav-number">2.2.</span> <span class="nav-text">2. Longest Palindromic Substring</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Miles</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://sonneblog.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/10/06/Dynamic-Programming-Introduction/';
+        this.page.identifier = '2018/10/06/Dynamic-Programming-Introduction/';
+        this.page.title = 'Dynamic Programming Introduction';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://sonneblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
