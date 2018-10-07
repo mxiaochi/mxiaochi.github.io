@@ -332,12 +332,24 @@
                 
               
 
-              <time title="Created: 2018-10-06 22:22:31 / Modified: 23:57:51" itemprop="dateCreated datePublished" datetime="2018-10-06T22:22:31-04:00">2018-10-06</time>
+              <time title="Created: 2018-10-06 22:22:31" itemprop="dateCreated datePublished" datetime="2018-10-06T22:22:31-04:00">2018-10-06</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-07 00:00:11" itemprop="dateModified" datetime="2018-10-07T00:00:11-04:00">2018-10-07</time>
               
             
           </span>
@@ -401,9 +413,8 @@
 
       
         
-          
-          1. ConceptIn most of time, we can calculate the result directly. For example, we go for lunch cost $10/person, if we have 10 people, the result = 10  
-          ...
+          <h2 id="1-Concept"><a href="#1-Concept" class="headerlink" title="1. Concept"></a>1. Concept</h2><p>In most of time, we can calculate the result directly. For example, we go for lunch cost $10/person, if we have 10 people, the result = 10 <em> 10, if we have 20 people, the result = 20 </em> 10. As the number of people growing, we can change the factor to multiply. However, suppose the number of people is huge and change quickly, if we still simply change the factor and multiple, it is a time consuming algorithm. </p>
+<p>On the other hand, we can image that we have a table which records the cost of different number of people we have calculated. And then, if a new number appeared, we search the table to find close number. Such as we should calculate cost of 90001 person and now we search the table and find a cost of 90000 person, so we just use this result plus $10 get the final result.</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/10/06/Dynamic-Programming-Introduction/#more" rel="contents">

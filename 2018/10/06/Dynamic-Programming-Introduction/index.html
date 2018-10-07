@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Leaky">
 <meta property="og:description" content="1. ConceptIn most of time, we can calculate the result directly. For example, we go for lunch cost $10/person, if we have 10 people, the result = 10  10, if we have 20 people, the result = 20  10. As">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-07T03:57:51.262Z">
+<meta property="og:updated_time" content="2018-10-07T04:00:11.880Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dynamic Programming Introduction">
 <meta name="twitter:description" content="1. ConceptIn most of time, we can calculate the result directly. For example, we go for lunch cost $10/person, if we have 10 people, the result = 10  10, if we have 20 people, the result = 20  10. As">
@@ -332,12 +332,24 @@
                 
               
 
-              <time title="Created: 2018-10-06 22:22:31 / Modified: 23:57:51" itemprop="dateCreated datePublished" datetime="2018-10-06T22:22:31-04:00">2018-10-06</time>
+              <time title="Created: 2018-10-06 22:22:31" itemprop="dateCreated datePublished" datetime="2018-10-06T22:22:31-04:00">2018-10-06</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-07 00:00:11" itemprop="dateModified" datetime="2018-10-07T00:00:11-04:00">2018-10-07</time>
               
             
           </span>
@@ -402,6 +414,7 @@
       
         <h2 id="1-Concept"><a href="#1-Concept" class="headerlink" title="1. Concept"></a>1. Concept</h2><p>In most of time, we can calculate the result directly. For example, we go for lunch cost $10/person, if we have 10 people, the result = 10 <em> 10, if we have 20 people, the result = 20 </em> 10. As the number of people growing, we can change the factor to multiply. However, suppose the number of people is huge and change quickly, if we still simply change the factor and multiple, it is a time consuming algorithm. </p>
 <p>On the other hand, we can image that we have a table which records the cost of different number of people we have calculated. And then, if a new number appeared, we search the table to find close number. Such as we should calculate cost of 90001 person and now we search the table and find a cost of 90000 person, so we just use this result plus $10 get the final result.</p>
+<a id="more"></a>
 <p>Take Fibonacci sequence as an example. </p>
 <p>We can use Recursive function to get the result, like this:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span> <span class="keyword">or</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">return</span> fib(n<span class="number">-1</span>) + fib(n<span class="number">-2</span>)</span><br></pre></td></tr></table></figure>
