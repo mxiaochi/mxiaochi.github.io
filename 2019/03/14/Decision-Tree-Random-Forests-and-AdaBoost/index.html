@@ -98,15 +98,32 @@
 
 
 
-  <meta name="keywords" content="Algorithm">
+  <meta name="description" content="Recently, I read a book named Deep Learning with Python, which is really a good book. It introduces deep learning from beginning to hard, though I just finish the first chapter, I think I will learn l">
+<meta name="keywords" content="Algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Decision Tree, Random Forests and AdaBoost">
 <meta property="og:url" content="http://yoursite.com/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/index.html">
 <meta property="og:site_name" content="Leaky">
+<meta property="og:description" content="Recently, I read a book named Deep Learning with Python, which is really a good book. It introduces deep learning from beginning to hard, though I just finish the first chapter, I think I will learn l">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-15T02:53:05.081Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/5.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/6.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/7.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/8.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/9.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/10.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/11.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/12.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/13.png">
+<meta property="og:updated_time" content="2019-03-15T05:26:07.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Decision Tree, Random Forests and AdaBoost">
+<meta name="twitter:description" content="Recently, I read a book named Deep Learning with Python, which is really a good book. It introduces deep learning from beginning to hard, though I just finish the first chapter, I think I will learn l">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/1.png">
 
 
 
@@ -331,12 +348,24 @@
                 
               
 
-              <time title="Created: 2019-03-14 22:50:20 / Modified: 22:53:05" itemprop="dateCreated datePublished" datetime="2019-03-14T22:50:20-04:00">2019-03-14</time>
+              <time title="Created: 2019-03-14 22:50:20" itemprop="dateCreated datePublished" datetime="2019-03-14T22:50:20-04:00">2019-03-14</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-03-15 01:26:07" itemprop="dateModified" datetime="2019-03-15T01:26:07-04:00">2019-03-15</time>
               
             
           </span>
@@ -388,7 +417,61 @@
       
 
       
-        
+        <p>Recently, I read a book named <em>Deep Learning with Python</em>, which is really a good book. It introduces deep learning from beginning to hard, though I just finish the first chapter, I think I will learn lots from it cause it is recommended by our professor.</p>
+<p>In the first chapter, it says:</p>
+<blockquote>
+<p>There are the two techniques you should be the most familiar with in order to be successful in applied machine learning today: gradient boosting machines, for shallow-learning problems; and deep learning, for perceptual problems.</p>
+</blockquote>
+<p>So, today, I will first talk about one of the boosting machines, AdaBoost.</p>
+<h3 id="1-Ensemble-Learning-Bagging-and-Boosting"><a href="#1-Ensemble-Learning-Bagging-and-Boosting" class="headerlink" title="1. Ensemble Learning - Bagging and Boosting"></a>1. Ensemble Learning - Bagging and Boosting</h3><p>The main principle behind the ensemble model is that a group of weak learners come together to form a strong learner, thus increasing the accuracy of the model.</p>
+<p>For bagging, it is easy understand but powerful. Here, I take decision trees as example.</p>
+<p>Suppose we have N samples and M features, we just take a subset features and samples to build tree and we repeat to create lot of trees. And prediction is given based on the aggregation of predictions from all the models.</p>
+<p>But for boosting, it will be a little more complicated. In bagging, we build every tree independently but in boosting, all about “teamwork”. Each model that runs, dictates what features the next model will focus on.</p>
+<img src="/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/1.png">
+<p>The picture showed above is very clearly. Boosting like a pipeline, one by one.</p>
+<p><a href="https://quantdare.com/what-is-the-difference-between-bagging-and-boosting/" target="_blank" rel="noopener">What is the difference between Bagging and Boosting?</a></p>
+<a id="more"></a>
+<h3 id="2-Decision-Trees"><a href="#2-Decision-Trees" class="headerlink" title="2. Decision Trees"></a>2. Decision Trees</h3><p>Here I just skip the basic concept about decision tree, you could visit my former <a href="http://sonneblog.com/2018/09/19/Some-basic-classification-algorithm-of-Machine-Learning/" target="_blank" rel="noopener">article</a> to learn what is decision.</p>
+<p>Let re-talk  about one question, how we evaluate the tree is good or not. </p>
+<img src="/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/2.png">
+<p>In this example, we create a tree that uses chest pain, good blood circulation and blocked artery status to predict heart disease.</p>
+<img src="/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/3.png">
+<p>We could build simple tree like this, and to determine which separation is best, we need a way to measure and compare “impurity”. The way called <strong>Gini</strong></p>
+<img src="/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/4.png">
+<p>Follow the same formula, we got another leaf’s <strong>Gini Impurity</strong> = 0.336. And then, we can calculate the total <strong>Gini Impurity</strong> for using <em>Chest Pain</em> to separate patients with and without heart disease.</p>
+<img src="/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/5.png">
+<p>Obviously, the tree which contains the lowest <strong>Gini Impurity</strong> value is the toppest node or called the root. The same, we follow this rule to choose the next generation’s node.</p>
+<p>For more details, you could check this video, it’s really easy and interesting:</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/7VeUPuFGJHk" frameborder="0" allowfullscreen></iframe></div>
+<h3 id="3-Random-Forests"><a href="#3-Random-Forests" class="headerlink" title="3. Random Forests"></a>3. Random Forests</h3><p>I think we could treat Random Forests as an bagging algorithm for Decision Trees. We random select samples from origin data(it is allowed repeat data) and take a subset features to build decision tree. Follow this function, we build several trees independently. </p>
+<p>When we try to make a prediction, we let every tree to predict make collection the results. Like voting, we take the majority as our final result.</p>
+<h3 id="4-AdaBoost"><a href="#4-AdaBoost" class="headerlink" title="4. AdaBoost"></a>4. AdaBoost</h3><p>Here is our protagonist~</p>
+<p>As we treat random forest as a bagging algorithm, obviously, AdaBoost is a boosting algorithm.</p>
+<p>We also build lots of trees in <strong>AdaBoost</strong>, however, every tree just has one root and two leaves called <strong>Stumps</strong>. It is so vivid, isn’t it? And <strong>Stump</strong> are technically <em>weak learners</em></p>
+<p>However, like the beginning I said, in boosting, we build these <strong>Stumps</strong> one by one, the  second one will be influenced by the first one, let’s look how is going on here.</p>
+<h4 id="a-Choose-Stump"><a href="#a-Choose-Stump" class="headerlink" title="a, Choose Stump"></a>a, Choose Stump</h4><p>Firstly, we set <em>Sample Weight</em> for each sample, the initial value is 1/N. And then we choose the first <strong>Stump</strong>. How to choose the first? We use <strong>Gini Impurity</strong>, the lowest one feature will be our first <strong>Stump</strong>.</p>
+<img src="/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/6.png">
+<h4 id="b-Update-Sample-Weight"><a href="#b-Update-Sample-Weight" class="headerlink" title="b, Update Sample Weight"></a>b, Update Sample Weight</h4><p>Intuitively, we increase the <strong>Sample Weight</strong> for these samples which are predicted wrong by the <strong>Stump</strong> we choose. Why? In the next generation, we random choose samples(<strong>Could be repeated</strong>) by normal distribution. And the distribution area equals to <strong>Sample Weight</strong>, so the higher <strong>Sample Weight</strong>, the more chance to be selected. And here is why this algorithm called <strong>Boosing</strong>. We keep choosing the wrong prediction samples to create new trees to enhance our model’s performance.</p>
+<p>Now, let’s go into details about how to update sample weight</p>
+<p>Firstly, we have a number named <strong>Total Error</strong> = number of error / number of samples</p>
+<p>And then, we calculate <strong>Amount of Say</strong> by <strong>Total Error</strong>:</p>
+<img src="/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/7.png">
+<img src="/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/8.png">
+<p>Obviously, the less <strong>Total Error</strong> one Stump make, the higher <strong>Amount of Say</strong> this Stump could have. It likes: <em>I am the most right man, you must listen to me!</em> If <strong>Total Error</strong> = 0.5, same as flip a coin, thus the <strong>Amount of Say</strong> = 0, like <em>my words are all nonsense</em>.</p>
+<p>So, we update the wrong predict sample using this formula to increase its weight:</p>
+<img src="/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/9.png">
+<p>It is like, <em>cause my <strong>Amount of Say</strong> is high, I am the most reasonable man, however, I am wrong with one little sample, we should take much care of it</em>. Which is called <strong>Boosting</strong>.</p>
+<p>The same, we reduce right samples’ weight using this formula:</p>
+<img src="/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/10.png">
+<p>After one turn, we get new <strong>Sample Weight</strong>:</p>
+<img src="/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/11.png">
+<p>For the next turn, we random choose samples from these origin sample by <strong>Sample Weight</strong> like normal distribution.</p>
+<img src="/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/12.png">
+<h4 id="c-Prediction"><a href="#c-Prediction" class="headerlink" title="c, Prediction"></a>c, Prediction</h4><p>Rather than count each number of classification, we calculate total weight by <strong>Amount of Say</strong>, </p>
+<img src="/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/13.png">
+<p>That’s all about the <strong>AdaBoost</strong>, if you want know more details, you could watch this video:</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/LsK-xG1cLYA" frameborder="0" allowfullscreen></iframe></div>
+
       
     </div>
 
@@ -483,8 +566,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -574,6 +666,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Ensemble-Learning-Bagging-and-Boosting"><span class="nav-number">1.</span> <span class="nav-text">1. Ensemble Learning - Bagging and Boosting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Decision-Trees"><span class="nav-number">2.</span> <span class="nav-text">2. Decision Trees</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Random-Forests"><span class="nav-number">3.</span> <span class="nav-text">3. Random Forests</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-AdaBoost"><span class="nav-number">4.</span> <span class="nav-text">4. AdaBoost</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-Choose-Stump"><span class="nav-number">4.1.</span> <span class="nav-text">a, Choose Stump</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-Update-Sample-Weight"><span class="nav-number">4.2.</span> <span class="nav-text">b, Update Sample Weight</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-Prediction"><span class="nav-number">4.3.</span> <span class="nav-text">c, Prediction</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

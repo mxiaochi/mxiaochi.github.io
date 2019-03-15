@@ -332,12 +332,24 @@
                 
               
 
-              <time title="Created: 2019-03-14 22:50:20 / Modified: 22:53:05" itemprop="dateCreated datePublished" datetime="2019-03-14T22:50:20-04:00">2019-03-14</time>
+              <time title="Created: 2019-03-14 22:50:20" itemprop="dateCreated datePublished" datetime="2019-03-14T22:50:20-04:00">2019-03-14</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-03-15 01:26:07" itemprop="dateModified" datetime="2019-03-15T01:26:07-04:00">2019-03-15</time>
               
             
           </span>
@@ -390,9 +402,28 @@
 
       
         
+          <p>Recently, I read a book named <em>Deep Learning with Python</em>, which is really a good book. It introduces deep learning from beginning to hard, though I just finish the first chapter, I think I will learn lots from it cause it is recommended by our professor.</p>
+<p>In the first chapter, it says:</p>
+<blockquote>
+<p>There are the two techniques you should be the most familiar with in order to be successful in applied machine learning today: gradient boosting machines, for shallow-learning problems; and deep learning, for perceptual problems.</p>
+</blockquote>
+<p>So, today, I will first talk about one of the boosting machines, AdaBoost.</p>
+<h3 id="1-Ensemble-Learning-Bagging-and-Boosting"><a href="#1-Ensemble-Learning-Bagging-and-Boosting" class="headerlink" title="1. Ensemble Learning - Bagging and Boosting"></a>1. Ensemble Learning - Bagging and Boosting</h3><p>The main principle behind the ensemble model is that a group of weak learners come together to form a strong learner, thus increasing the accuracy of the model.</p>
+<p>For bagging, it is easy understand but powerful. Here, I take decision trees as example.</p>
+<p>Suppose we have N samples and M features, we just take a subset features and samples to build tree and we repeat to create lot of trees. And prediction is given based on the aggregation of predictions from all the models.</p>
+<p>But for boosting, it will be a little more complicated. In bagging, we build every tree independently but in boosting, all about “teamwork”. Each model that runs, dictates what features the next model will focus on.</p>
+<img src="/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/1.png">
+<p>The picture showed above is very clearly. Boosting like a pipeline, one by one.</p>
+<p><a href="https://quantdare.com/what-is-the-difference-between-bagging-and-boosting/" target="_blank" rel="noopener">What is the difference between Bagging and Boosting?</a></p>
+          <!--noindex-->
           
-            
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/14/Decision-Tree-Random-Forests-and-AdaBoost/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           
+          <!--/noindex-->
         
       
     </div>
